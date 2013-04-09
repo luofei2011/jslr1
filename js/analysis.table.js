@@ -106,7 +106,7 @@ function my_dis() {
 	$("display").innerHTML = str;
 }
 
-/*获取页面中文本框的输入值,并进行相应的处理/
+/*获取页面中文本框的输入值,并进行相应的处理*/
 function getValue() {
 	var value = $("input").value.split(/\n/g);
 	V = setV(value.shift());		//获得所有的非终结符
