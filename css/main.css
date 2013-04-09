@@ -1,0 +1,29 @@
+.wrapper{
+	width: calc(100% - 20px);
+	width: -moz-calc(100% - 20px);
+	width: -webkit-calc(100% - 20px);
+	margin: 0 auto;
+}
+.content{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	height: calc(60% - 10px);
+}
+.left{
+	float: left;
+	width: 48%;
+}
+.right{
+	float: right;
+	width: 48%;
+}
+#input,
+#display{
+	height: 400px;
+	width: 100%;
+}
+#display{
+	border: 1px solid #000;
+	overflow: auto;
+}
