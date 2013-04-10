@@ -1,3 +1,37 @@
+/*i
+ *	@author:Poised_flw
+ *	@email:luofeihit2010@gmail.com
+ *	@github:https://github.com/luofei2011/jslr
+ *	@blog:www.cnblogs.com/Poised_flw
+ *	
+ *	README:
+ *		1.通过文法的输入(只能如下的格式:).用LR(1)算法构建分析表
+			V={S,E,T}
+			T={i,-,(,)}
+			S->E
+			E->T
+			E->E-T
+			T->i
+			T->(E)
+ *		*(1)文法目前只能支持单独的字母,后期会加入映射转换的功能如(if->con | I->C);
+ *		*(2)你不需要在刚输入的时候就使用拓广文法,后期程序会自动添加
+ *		*(3)最好按照给定的格式,第一行是非终结符集合,第二行是终结符集合
+ *		2.给analysis_alo()函数传入一个string的参数(必须以'#')结尾.该函数能分析出
+ *		  此字符串是否能通过该文法分析,返回状态'acc'或则出错.
+ *		3.该程序目前还没有操作本地文件的功能,因此若想保存数据是能手动copy
+ *		4.函数式编程过程...没想好如何用面向对象来体现.
+ *	EXAMPLE:
+ *			V={S,E,T}
+ *			T->{i,-,(,)}
+ *			S->E
+ *			E->T
+ *			E->E-T
+ *			T->i
+ *			T->(E)
+ *		测试串:i-(i)-i#
+ *
+ * */
+
 var $ = function(selector) { 
 	return document.getElementById(selector);
 }
@@ -69,12 +103,12 @@ function rmvNull(value) {
 
 /*获得所有的非终结符*/
 function setV(value) {
-	return value.replace(/(V={)|}/g,'').split(',');
+	return value.replace(/(V={)|}$/g,'').split(',');
 }
 
 /*获得所有的终结符*/
 function setT(value) {
-	return value.replace(/(T={)|}/g,'').split(',');
+	return value.replace(/(T={)|}$/g,'').split(',');
 }
 
 /*右边栏显示项目集范族*/
@@ -117,17 +151,86 @@ function getValue() {
 	getLR_I();				//递归产生项目集范族
 	//r_dis(I);				//显示产生的项目集范族
 	action_goto();			//产生action和goto表
-	my_dis();				//打印action和goto表
+	//my_dis();				//打印action和goto表
+
+	/*清空不再需要的全局变量*/
+	pro = [];	
+	I = [];		
+	vt_arr = [];
+	V = [];		 
+	T = [];		
+	/************************/
+
+	analysis_alo('i-(i)-i#');
 }
 
 /*
+ *	求FIRST集合
+ *	T->T*F
+ *	T->T/F会产生死循环
+ * */
+function getFirstByOne(value) {
+	var first = [];	
+	if(is_inArray(value,T) || value == '#')
+		first.push(value);
+	if(is_inArray(value,V)){
+		//找出所有的X->a/X->Y型产生式
+		var all_x = [];
+		for(var item in pro_G){
+			//产生式的右部
+			if(pro_G[item][0] == value){
+				//右侧是终结符并且没有加入first集合的情况下
+				if(is_inArray(pro_G[item][3],T) && !is_inArray(pro_G[item][3],first))
+					first.push(pro_G[item][3]);
+				//右侧第一个是非终结符
+				/*像这种T->T/F的产生式会发生死递归.
+				  能想到的有两种方法能解决:
+						1.循环的过程中,像遍历二叉树一样弄一个hash表记录是否被访问过
+						2.强制规定不能有这种类型的产生式出现,若出现则忽略其FIRST集合
+				  本实验我采取第二种方法,牺牲精确度,提高效率.
+				*/
+				else if(is_inArray(pro_G[item][3],V) && pro_G[item][3] != pro_G[item][0]){
+					var all_v = getFirstByOne(pro_G[item][3]);
+					if(!is_inArray(all_v,first))
+						for(var j in all_v)
+							first.push(all_v[j]);
+				}
+			}
+		}
+	}
+	return first;
+}
+
+/*符号串的FIRST集合*/
+function getFirstAll(str){
+	var first = [];
+	/*for(var i=0; i<str.length; i++){
+		var _val = getFirstByOne(str[i]);
+		for(var j in _val)
+			if(!is_inArray(_val[j],first))
+				first.push(_val[j]);
+		if(is_inArray(str[0],T))
+			break;
+	}*/
+   //感觉这里只能这样写,不知是FIRST集求错还是怎么.循环会有更多的FIRST集合
+	var _val = getFirstByOne(str[0]);
+	for(var j in _val)
+		if(!is_inArray(_val[j],first))
+			first.push(_val[j]);
+	return first;
+}
+
+
+/*
  *	闭包函数
+ *	是非递归实现
  * @param array I 传递的需要求闭包的项目
  * @param array C 记录产生的闭包集合
  * @return array C	最终的闭包集合
  *
  * */
 function closure(I) {
+	//初始化闭包
 	var C = I || [];	
 	/*记录闭包中的项目数*/
 	var len = C.length;
@@ -139,17 +242,21 @@ function closure(I) {
 				/*'.'后面是终结符则停止*/
 				if(is_inArray(str,T))
 					continue;
-				var first = C[item].slice(C[item].indexOf('.')+2,C[item].length).replace(/,/g,'')[0];
+				var first_arr = C[item].slice(C[item].indexOf('.')+2,C[item].length).replace(/,/g,'');
+				var first = getFirstAll(first_arr);
 				/*遍历拓广文法G'中产生式的左部*/
 				for(var i in pro){
 					/*找到以B开始的项目*/
 					if(str == i){
 						/*遍历出以B开始的产生式,并把他们加'.'以后加入闭包中*/
 						for(var j in pro[i]){
-							var yeta = i + '->.' + pro[i][j] + ',' + first;
-							/*循环处理C中的每项,去重.直到C的大小不再改变*/
-							if(!is_inArray(yeta,C))
-								C.push(yeta);
+							/*还得对当前产生式的FIRST集合遍历一次*/
+							for(var n in first){
+								var yeta = i + '->.' + pro[i][j] + ',' + first[n];
+								/*循环处理C中的每项,去重.直到C的大小不再改变*/
+								if(!is_inArray(yeta,C))
+									C.push(yeta);
+							}
 						}
 					}
 				}
@@ -229,6 +336,7 @@ function is_eql_arr(arr_1,arr_2) {
 }
 
 /*
+ *	非递归实现
  *	利用closure()和GO计算LR(1)项目集范族
  * @param boolean flag	已经产生状态的标志
  * @param int	num		当前递归的数组I项目
@@ -265,7 +373,7 @@ function getLR_I() {
 		now_item = I[++num];
 		len = I.length;
 		/*到最后一项后需要判断是结束递归还是继续递归*/
-		if(num == I.length){
+		if(num > I.length){
 			if(I.length > len){
 				/*递归处理I中的每项,给他们求闭包*/
 				continue;
@@ -296,31 +404,107 @@ function get_pos(arr) {
 function action_goto() {
 	for(var i in I){
 		//需要初始化一下两张表
-		action[i] = [];
-		_goto[i] = [];
-		/*[A->a.ap,b] in I[i] && a in T*/
+		action[i] = [''];
+		_goto[i] = [''];
+		if(is_inArray('$->S.,#',I[i])){
+			action[i]['#'] = 'acc';
+			continue;
+		}
 		for(var j in I[i]){
-			var a = I[i][j].slice(I[i][j].indexOf('.')+1,I[i][j].indexOf('.')+2);
+			var item = I[i][j];
+			var a = item.slice(item.indexOf('.')+1,item.indexOf('.')+2);
+			//移入项目
 			if(is_inArray(a,T)){
 				var s = get_pos(GO(I[i],a));
 				if(s > -1)
 					action[i][a] = 'S'+s;
 			}
+			//记录能归约的项
 			if(a == ','){
-				var J = is_inArray(I[i][j].slice(0,I[i][j].indexOf('.')),pro_G);
+				var J = is_inArray(item.slice(0,item.indexOf('.')),pro_G);
 				if(J)
-					action[i][I[i][j][I[i][j].length-1]] = 'r'+J;
+					action[i][item[item.length-1]] = 'r'+J;
 			}
 		}
-		/*GO(I[k],B) = I[i] && B in V*/
+		//归约后的状态改变
 		for(var k in V){
 			var go = get_pos(GO(I[i],V[k]))
 			if(go > -1)
 				_goto[i][V[k]] = go;
 		}
-		if(is_inArray('$->S.,#',I[i]))
-			action[i]['#'] = 'acc';
 	}
+}
+
+/*
+ *	LR分析算法
+ *	非递归实现
+ *	通过判断栈顶状态和输入串确定当前是移入还是归约等等...
+ *	@param	string	w_str	需要匹配的串
+ *	@param	array	S_stack	当前栈状态数组
+ *	@param	array	X_stack	符号栈
+ *	@param	string	ip		输入串指针
+ *	@return	state	'acc'表示接受,其它则出错
+ *
+ * */
+function analysis_alo(w_str) {
+	var w_str = w_str.split('');
+	var S_stack = [];	//栈顶状态
+	var X_stack = [];	//输入符号栈
+	/*初始化两个栈*/
+	S_stack.push('0');
+	X_stack.push('#');
+	/*将输入串放入输入缓冲区中,指针ip指向第一个符号*/
+	var ip = w_str.shift();
+	/*显示信息*/
+	var str_dis = '<table>';
+	var step =0;
+	while(1){
+		str_dis += '<tr><td>步骤'+ (++step) + 
+				  '</td><td>' + S_stack + X_stack + 
+				  '</td><td>' +ip+w_str + '</td>';
+		var status = action[parseInt(S_stack[S_stack.length-1])][ip] || '';
+		str_dis += '<td>action['+S_stack[S_stack.length-1]+','+ip+']='+status;
+		/*移入*/
+		if(status.indexOf('S') != -1){
+			S_stack.push(parseInt(status.replace(/S/g,'')));
+			X_stack.push(ip);
+			ip = w_str.shift();
+			str_dis += ',移进状态'+status.replace(/S/g,'')+'和输入符号'+ip+'</td>';
+		/*归约,并判断下一步状态*/
+		}else if(status.indexOf('r') != -1){
+			/*第k个产生式A->a*/
+			var str = pro_G[parseInt(status.replace(/r/g,''))];
+			/*从栈顶弹出2*|a|个符号*/
+			for(var j=0; j<str.slice(str.indexOf('>')+1,str.length).length; j++){
+				X_stack.pop();
+				S_stack.pop();
+			}
+			/*把A压入栈中*/
+			X_stack.push(str[0]);
+			str_dis += ',按第'+status.replace(/r/g,'')+'个产生式'+str+'归约</td></tr>';
+
+			//下一步的状态
+			str_dis += '<tr><td>步骤'+ (++step) + '</td>' +
+						   '<td>' +  S_stack + X_stack + '</td>' +
+						   '<td>' + ip+w_str + '</td>';
+			/*令S'为当前栈顶状态,把goto[S',A]压入栈中*/
+			var _s = _goto[parseInt(S_stack[S_stack.length-1])][X_stack[X_stack.length-1]];
+			S_stack.push(_s);
+			str_dis += '<td>goto['+S_stack[S_stack.length-2]+','+str[0]+']='+_s+
+					   ',将状态'+_s+'压入栈中</td></tr>';
+		/*接受,暂停处理*/
+		}else if(status == 'acc'){
+			str_dis += ',接受</tr>';
+			break;
+		/*出错,同样暂停处理*/
+		}else{
+			str_dis += ',无此状态转换,出错!</tr>';
+			break;
+		}
+		str_dis += '</tr>';
+	}
+	str_dis += '</table>';
+	$("display").innerHTML = str_dis;
 }
 
 window.onload = function() {
