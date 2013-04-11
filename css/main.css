@@ -1,14 +1,22 @@
+*{
+	margin:0;
+	padding:0;
+}
+a{
+	text-decoration:none;
+	color:#369;
+	text-align:center;
+}
 .wrapper{
 	width: calc(100% - 20px);
 	width: -moz-calc(100% - 20px);
 	width: -webkit-calc(100% - 20px);
-	margin: 0 auto;
+	margin: 20px auto 0;
 }
 .content{
 	width: 100%;
-	margin: 0;
-	padding: 0;
 	height: calc(60% - 10px);
+	margin-top:3px;
 }
 .left{
 	float: left;
@@ -26,4 +34,12 @@
 #display{
 	border: 1px solid #000;
 	overflow: auto;
+}
+input{
+	margin-right: 10px;
+}
+#footer{
+	position:absolute;
+	bottom:10px;
+	left: 41%;
 }

@@ -7,9 +7,22 @@
   <link rel="stylesheet" href="css/main.css" type="text/css">
 </head>
 <body>
+<script type="text/javascript">
+	var fso = new ActiveXObject("Scripting.FileSystemObject");
+	var a = fso.CreateFile("/home/luofei/桌面/lab2/luofei.txt",true);
+	a.WriteLine('luofei');
+	a.close();
+	alert('yes');
+</script>
 <div class="wrapper">
 	<div class="header">
-		<input type="button" value="创建分析表" onclick="getValue();">
+		<input type="button" value="产生项目集范族" onclick="getValue();">
+		<input type="button" value="创建分析表" onclick="my_dis();">
+		<input type="button" value='清空左边输入' onclick="clear_in();">
+		<input type="button" value='清空右边输出' onclick="clear_out();">
+		<input type="button" value="保存结果">
+		<input type="button" value="LR分析" onclick="analysis_alo();">
+		<span style="font-size:12px;">(请在下面输入框中输入需要分析的串)</span>
 	</div>
 	<div class="content">
 		<div class="left">
@@ -20,6 +33,9 @@
 			</div>
 		</div>
 	</div>
+</div>
+<div id="footer">
+	<a href="http://www.cnblogs.com/Poised-flw" target="_blank">@CopyRight2013-2015 by Poised_flw</a>
 </div>
 </body>
 </html>

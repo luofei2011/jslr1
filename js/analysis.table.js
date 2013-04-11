@@ -1,4 +1,4 @@
-/*i
+/*
  *	@author:Poised_flw
  *	@email:luofeihit2010@gmail.com
  *	@github:https://github.com/luofei2011/jslr
@@ -112,10 +112,10 @@ function setT(value) {
 }
 
 /*右边栏显示项目集范族*/
-function r_dis(value){
+function r_dis(){
 	var str ='';
-	for(var i in value){
-		str += 'I['+i+']={'+value[i]+'}</br>';
+	for(var i in I){
+		str += 'I['+i+']={'+I[i]+'}</br>';
 	}
 	$("display").innerHTML = str;
 }
@@ -149,19 +149,19 @@ function getValue() {
 	get_v_t(value);					//获取到所有的V+T
 	storePro(value);				//存储拓广文法产生式
 	getLR_I();				//递归产生项目集范族
-	//r_dis(I);				//显示产生的项目集范族
+	r_dis(I);				//显示产生的项目集范族
 	action_goto();			//产生action和goto表
 	//my_dis();				//打印action和goto表
 
 	/*清空不再需要的全局变量*/
 	pro = [];	
-	I = [];		
+	//I = [];		
 	vt_arr = [];
 	V = [];		 
 	T = [];		
 	/************************/
 
-	analysis_alo('i-(i)-i#');
+	//analysis_alo('i-(i)-i#');
 }
 
 /*
@@ -446,8 +446,13 @@ function action_goto() {
  *	@return	state	'acc'表示接受,其它则出错
  *
  * */
-function analysis_alo(w_str) {
-	var w_str = w_str.split('');
+function analysis_alo() {
+	//取得输出值
+    if($('input').value.length <= 0)
+		$('input').value = 'i-(i)-i#';
+	var w_str = $("input").value;
+
+	w_str = w_str.split('');
 	var S_stack = [];	//栈顶状态
 	var X_stack = [];	//输入符号栈
 	/*初始化两个栈*/
@@ -507,10 +512,23 @@ function analysis_alo(w_str) {
 	$("display").innerHTML = str_dis;
 }
 
+function clear_in() {
+	$("input").value = '';
+}
+function clear_out() {
+	$("display").innerHTML = '';
+}
 window.onload = function() {
 	/*初始化文本框中的值*/
 	(function() {
-		var init = 'V={S,L,R}\nT={*,i,=}\nS->L=R\nS->R\nL->*R\nL->i\nR->L\n';
+		//var init = 'V={S,L,R}\nT={*,i,=}\nS->L=R\nS->R\nL->*R\nL->i\nR->L\n';
+		var init = 'V={S,E,T}\nT={i,-,(,)}\nS->E\nE->T\nE->E-T\nT->i\nT->(E)\n';
 		$("input").value = init;
 	})();
+
+	var fso = new ActiveXObject("Scripting.FileSystemObject");
+	var a = fso.CreateFile("/home/luofei/桌面/lab2/luofei.txt",true);
+	a.WriteLine('luofei');
+	a.close();
+	alert('yes');
 };
