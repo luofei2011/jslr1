@@ -404,8 +404,8 @@ function get_pos(arr) {
 function action_goto() {
 	for(var i in I){
 		//需要初始化一下两张表
-		action[i] = [''];
-		_goto[i] = [''];
+		action[i] = [];
+		_goto[i] = [];
 		if(is_inArray('$->S.,#',I[i])){
 			action[i]['#'] = 'acc';
 			continue;
@@ -525,10 +525,4 @@ window.onload = function() {
 		var init = 'V={S,E,T}\nT={i,-,(,)}\nS->E\nE->T\nE->E-T\nT->i\nT->(E)\n';
 		$("input").value = init;
 	})();
-
-	var fso = new ActiveXObject("Scripting.FileSystemObject");
-	var a = fso.CreateFile("/home/luofei/桌面/lab2/luofei.txt",true);
-	a.WriteLine('luofei');
-	a.close();
-	alert('yes');
 };
