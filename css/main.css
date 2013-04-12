@@ -31,6 +31,11 @@ a{
 	height: 400px;
 	width: 100%;
 }
+#input{
+	background-color:#000;
+	color:#fff;
+	font-size:14px;
+}
 #display{
 	border: 1px solid #000;
 	overflow: auto;
@@ -55,4 +60,22 @@ input{
 }
 #show a:hover{
 	text-decoration: underline;
+}
+#err{
+	width:26%;
+	height:400px;
+	position: absolute;
+	left:22%;
+	top:43px;
+	background-color:#eee;
+	display: none;
+}
+#close{
+	float: right;
+	cursor: pointer;
+	width:20px;
+	height:20px;
+	border-left:1px solid #000;
+	border-bottom:1px solid #000;
+	text-align:center;
 }

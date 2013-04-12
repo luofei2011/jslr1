@@ -57,6 +57,16 @@ function dealCode(){
 	for(var i in value){
 		str += analysis_alo(value[i]+'#');
 	}
+	var err = '';
+	if(error.length){
+		console.log(error);
+		for(var i in error){
+			err += '<p>'+error[i]+'</p>';
+		}
+		$("err_").innerHTML = err;
+		$("err").style.display = 'block';
+		error = [];
+	}
 	$("display").innerHTML = str;
 }
 

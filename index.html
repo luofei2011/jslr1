@@ -17,9 +17,8 @@
 		<input type="button" value='清空左边输入' onclick="clear_in();">
 		<input type="button" value='清空右边输出' onclick="clear_out();">
 		<input type="button" value="保存结果" onclick="save();">
-		<input type="button" value="LR分析" onclick="analysis_alo();">
+		<input type="button" value="LR分析" onclick="dealCode();">
 		<span style="font-size:12px;">(请在下面输入框中输入需要分析的串)</span>
-		<input type="button"  value="测试" onclick="dealCode();"/>
 	</div>
 	<div class="content">
 		<div class="left">
@@ -31,6 +30,10 @@
 		</div>
 	</div>
 	<div id="show"></div>
+</div>
+<div id="err">
+	<span id="close" title="关闭">X</span>
+	<div id="err_"></div>
 </div>
 <div id="footer">
 	Copyright@2013 by<a href="http://www.cnblogs.com/Poised-flw" target="_blank"> Poised_flw</a>

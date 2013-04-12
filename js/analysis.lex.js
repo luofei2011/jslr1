@@ -1,6 +1,11 @@
+//全局数组,记录发生的所有错误
+var error = [];
+
 /*
  *词法分析部分,单独对每行语句进行检测
  *	@param	array	code	数组形式的代码段
+ *	@return	array	str		数组形式返回编码后的代码段
+ *
  * */
 function analysis_lex(code) {
 	var str = [];	//记录转换后的每个语句.
@@ -9,13 +14,16 @@ function analysis_lex(code) {
 		if(code[i].length){
 			var item = code[i];
 			//第二步,是否出现注释不匹配的情况
-			if(item.indexOf('/*') != -1 || item.indexOf('*/') != -1)
+			if(item.indexOf('/*') != -1 || item.indexOf('*/') != -1){
+				error.push('/**/多行注释使用有误,请检查.');
 				return false;
 			//是while语句
-			else if(item.indexOf('while') != -1){
+			}else if(item.indexOf('while') != -1){
 				//首先判断do/done是否匹配循环扫描进来一并处理
-				if(!isMatch('do','done',i,code.length,code))
+				if(!isMatch('do','done',i,code.length,code)){
+					error.push('while循环结构不封闭,请检查!');
 					return false;
+				}
 				//读进整个while块
 				i++;	//done只能独占一行
 				while(1){
@@ -29,8 +37,10 @@ function analysis_lex(code) {
 				str.push(trans_(item));
 			//if/if_else语句
 			}else if(item.indexOf('if') != -1 || item.indexOf('else') != -1){
-				if(!isMatch('then','fi',i,code.length,code))
+				if(!isMatch('then','fi',i,code.length,code)){
+					error.push('if或则else结构不封闭,请检查!');
 					return false;
+				}
 				i++;
 				while(1){
 					if(code[i].indexOf('fi') != -1){
@@ -50,6 +60,7 @@ function analysis_lex(code) {
 	return str;
 }
 
+//对所有输入代码进行转码
 function trans_(str) {
 	//规定这样的界符:终结符是界符
 	var band = ['(',')','-','+','*','/','=','>','<','\'','[',']'];
@@ -103,6 +114,7 @@ function trans_(str) {
 	return str_out;
 }
 
+//根据传入参数判断是否封闭
 function isMatch(st,ed,i,len,str){
 	//为包含开始区
 	if(str[i].indexOf(st) == -1 && str[i+1].indexOf(st) == -1)

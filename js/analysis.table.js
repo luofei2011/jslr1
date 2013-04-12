@@ -504,13 +504,13 @@ function analysis_alo(chg_str) {
 			break;
 		/*出错,同样暂停处理*/
 		}else{
+			error.push('代码块:'+chg_str+'有误!');
 			str_dis += ',无此状态转换,出错!</tr>';
 			break;
 		}
 		str_dis += '</tr>';
 	}
 	str_dis += '</table>';
-	//$("display").innerHTML = str_dis;
 	return str_dis;
 }
 
@@ -527,4 +527,7 @@ window.onload = function() {
 		var init = 'V={S,E,T}\nT={i,-,(,)}\nS->E\nE->T\nE->E-T\nT->i\nT->(E)\n';
 		$("input").value = init;
 	})();
+	$("close").onclick = function() {
+		$("err").style.display = 'none';
+	}
 };
