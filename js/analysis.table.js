@@ -158,7 +158,7 @@ function getValue() {
 	//I = [];		
 	vt_arr = [];
 	V = [];		 
-	T = [];		
+	//T = [];		
 	/************************/
 
 	//analysis_alo('i-(i)-i#');
@@ -446,11 +446,12 @@ function action_goto() {
  *	@return	state	'acc'表示接受,其它则出错
  *
  * */
-function analysis_alo() {
+function analysis_alo(chg_str) {
 	//取得输出值
-    if($('input').value.length <= 0)
+    /*if($('input').value.length <= 0)
 		$('input').value = 'i-(i)-i#';
-	var w_str = $("input").value;
+	var w_str = $("input").value;*/
+    var w_str = chg_str;
 
 	w_str = w_str.split('');
 	var S_stack = [];	//栈顶状态
@@ -509,7 +510,8 @@ function analysis_alo() {
 		str_dis += '</tr>';
 	}
 	str_dis += '</table>';
-	$("display").innerHTML = str_dis;
+	//$("display").innerHTML = str_dis;
+	return str_dis;
 }
 
 function clear_in() {

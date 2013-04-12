@@ -1,0 +1,246 @@
+I[0]={$->.S,#S->.TN,#S->.TN=C,#S->.TN[],#S->.N=E,#S->.N='s',#S->.w(B)oSp,#S->.f(B)tSu,#S->.f(B)tSuetSu,#S->.rN,#S->.r'C',#T->.n,vT->.b,vT->.y,vT->.g,vN->.v,=}
+I[1]={$->S.,#}
+I[2]={S->T.N,#S->T.N=C,#S->T.N[],#N->.v,#N->.v,=N->.v,[}
+I[3]={S->N.=E,#S->N.='s',#}
+I[4]={S->w.(B)oSp,#}
+I[5]={S->f.(B)tSu,#S->f.(B)tSuetSu,#}
+I[6]={S->r.N,#S->r.'C',#N->.v,#}
+I[7]={T->n.,v}
+I[8]={T->b.,v}
+I[9]={T->y.,v}
+I[10]={T->g.,v}
+I[11]={N->v.,=}
+I[12]={S->TN.,#S->TN.=C,#S->TN.[],#}
+I[13]={N->v.,#N->v.,=N->v.,[}
+I[14]={S->N=.E,#S->N=.'s',#E->.E F,#E->.E-F,#E->.F,#E->.E F, E->.E-F, E->.F, E->.E F,-E->.E-F,-E->.F,-F->.F*G,#F->.F/G,#F->.G,#F->.F*G, F->.F/G, F->.G, F->.F*G,-F->.F/G,-F->.G,-F->.F*G,*F->.F/G,*F->.G,*F->.F*G,/F->.F/G,/F->.G,/G->.(E),#G->.N,#G->.N['i'],#G->.i,#G->.d,#G->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,#N->.v,[N->.v, N->.v,-N->.v,*N->.v,/}
+I[15]={S->w(.B)oSp,#B->.ERE,)E->.E F,<E->.E F,>E->.E F,=E->.E-F,<E->.E-F,>E->.E-F,=E->.F,<E->.F,>E->.F,=E->.E F, E->.E-F, E->.F, E->.E F,-E->.E-F,-E->.F,-F->.F*G,<F->.F/G,<F->.G,<F->.F*G,>F->.F/G,>F->.G,>F->.F*G,=F->.F/G,=F->.G,=F->.F*G, F->.F/G, F->.G, F->.F*G,-F->.F/G,-F->.G,-F->.F*G,*F->.F/G,*F->.G,*F->.F*G,/F->.F/G,/F->.G,/G->.(E),<G->.N,<G->.N['i'],<G->.i,<G->.d,<G->.(E),>G->.N,>G->.N['i'],>G->.i,>G->.d,>G->.(E),=G->.N,=G->.N['i'],=G->.i,=G->.d,=G->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,<N->.v,[N->.v,>N->.v,=N->.v, N->.v,-N->.v,*N->.v,/}
+I[16]={S->f(.B)tSu,#S->f(.B)tSuetSu,#B->.ERE,)E->.E F,<E->.E F,>E->.E F,=E->.E-F,<E->.E-F,>E->.E-F,=E->.F,<E->.F,>E->.F,=E->.E F, E->.E-F, E->.F, E->.E F,-E->.E-F,-E->.F,-F->.F*G,<F->.F/G,<F->.G,<F->.F*G,>F->.F/G,>F->.G,>F->.F*G,=F->.F/G,=F->.G,=F->.F*G, F->.F/G, F->.G, F->.F*G,-F->.F/G,-F->.G,-F->.F*G,*F->.F/G,*F->.G,*F->.F*G,/F->.F/G,/F->.G,/G->.(E),<G->.N,<G->.N['i'],<G->.i,<G->.d,<G->.(E),>G->.N,>G->.N['i'],>G->.i,>G->.d,>G->.(E),=G->.N,=G->.N['i'],=G->.i,=G->.d,=G->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,<N->.v,[N->.v,>N->.v,=N->.v, N->.v,-N->.v,*N->.v,/}
+I[17]={S->rN.,#}
+I[18]={S->r'.C',#C->.i,'C->.d,'C->.s,'}
+I[19]={N->v.,#}
+I[20]={S->TN=.C,#C->.i,#C->.d,#C->.s,#}
+I[21]={S->TN[.],#}
+I[22]={G->N.,#G->N.['i'],#G->N., G->N.['i'], G->N.,-G->N.['i'],-G->N.,*G->N.['i'],*G->N.,/G->N.['i'],/}
+I[23]={S->N=E.,#E->E. F,#E->E.-F,#E->E. F, E->E.-F, E->E. F,-E->E.-F,-}
+I[24]={S->N='.s',#}
+I[25]={G->(.E),#G->(.E), G->(.E),-G->(.E),*G->(.E),/E->.E F,)E->.E-F,)E->.F,)E->.E F, E->.E-F, E->.F, E->.E F,-E->.E-F,-E->.F,-F->.F*G,)F->.F/G,)F->.G,)F->.F*G, F->.F/G, F->.G, F->.F*G,-F->.F/G,-F->.G,-F->.F*G,*F->.F/G,*F->.G,*F->.F*G,/F->.F/G,/F->.G,/G->.(E),)G->.N,)G->.N['i'],)G->.i,)G->.d,)G->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,)N->.v,[N->.v, N->.v,-N->.v,*N->.v,/}
+I[26]={G->i.,#G->i., G->i.,-G->i.,*G->i.,/}
+I[27]={G->d.,#G->d., G->d.,-G->d.,*G->d.,/}
+I[28]={E->F.,#E->F., E->F.,-F->F.*G,#F->F./G,#F->F.*G, F->F./G, F->F.*G,-F->F./G,-F->F.*G,*F->F./G,*F->F.*G,/F->F./G,/}
+I[29]={F->G.,#F->G., F->G.,-F->G.,*F->G.,/}
+I[30]={N->v.,#N->v.,[N->v., N->v.,-N->v.,*N->v.,/}
+I[31]={G->N.,<G->N.['i'],<G->N.,>G->N.['i'],>G->N.,=G->N.['i'],=G->N., G->N.['i'], G->N.,-G->N.['i'],-G->N.,*G->N.['i'],*G->N.,/G->N.['i'],/}
+I[32]={B->E.RE,)E->E. F,<E->E. F,>E->E. F,=E->E.-F,<E->E.-F,>E->E.-F,=E->E. F, E->E.-F, E->E. F,-E->E.-F,-R->.<,(R->.<,vR->.<,iR->.<,dR->.>,(R->.>,vR->.>,iR->.>,dR->.=,(R->.=,vR->.=,iR->.=,d}
+I[33]={G->(.E),<G->(.E),>G->(.E),=G->(.E), G->(.E),-G->(.E),*G->(.E),/E->.E F,)E->.E-F,)E->.F,)E->.E F, E->.E-F, E->.F, E->.E F,-E->.E-F,-E->.F,-F->.F*G,)F->.F/G,)F->.G,)F->.F*G, F->.F/G, F->.G, F->.F*G,-F->.F/G,-F->.G,-F->.F*G,*F->.F/G,*F->.G,*F->.F*G,/F->.F/G,/F->.G,/G->.(E),)G->.N,)G->.N['i'],)G->.i,)G->.d,)G->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,)N->.v,[N->.v, N->.v,-N->.v,*N->.v,/}
+I[34]={S->w(B.)oSp,#}
+I[35]={G->i.,<G->i.,>G->i.,=G->i., G->i.,-G->i.,*G->i.,/}
+I[36]={G->d.,<G->d.,>G->d.,=G->d., G->d.,-G->d.,*G->d.,/}
+I[37]={E->F.,<E->F.,>E->F.,=E->F., E->F.,-F->F.*G,<F->F./G,<F->F.*G,>F->F./G,>F->F.*G,=F->F./G,=F->F.*G, F->F./G, F->F.*G,-F->F./G,-F->F.*G,*F->F./G,*F->F.*G,/F->F./G,/}
+I[38]={F->G.,<F->G.,>F->G.,=F->G., F->G.,-F->G.,*F->G.,/}
+I[39]={N->v.,<N->v.,[N->v.,>N->v.,=N->v., N->v.,-N->v.,*N->v.,/}
+I[40]={S->f(B.)tSu,#S->f(B.)tSuetSu,#}
+I[41]={S->r'C.',#}
+I[42]={C->s.,'}
+I[43]={C->i.,'}
+I[44]={C->d.,'}
+I[45]={S->TN=C.,#}
+I[46]={C->s.,#}
+I[47]={C->i.,#}
+I[48]={C->d.,#}
+I[49]={S->TN[].,#}
+I[50]={G->N[.'i'],#G->N[.'i'], G->N[.'i'],-G->N[.'i'],*G->N[.'i'],/}
+I[51]={E->E .F,#E->E .F, E->E .F,-F->.F*G,#F->.F/G,#F->.G,#F->.F*G, F->.F/G, F->.G, F->.F*G,-F->.F/G,-F->.G,-F->.F*G,*F->.F/G,*F->.G,*F->.F*G,/F->.F/G,/F->.G,/G->.(E),#G->.N,#G->.N['i'],#G->.i,#G->.d,#G->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,#N->.v,[N->.v, N->.v,-N->.v,*N->.v,/}
+I[52]={E->E-.F,#E->E-.F, E->E-.F,-F->.F*G,#F->.F/G,#F->.G,#F->.F*G, F->.F/G, F->.G, F->.F*G,-F->.F/G,-F->.G,-F->.F*G,*F->.F/G,*F->.G,*F->.F*G,/F->.F/G,/F->.G,/G->.(E),#G->.N,#G->.N['i'],#G->.i,#G->.d,#G->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,#N->.v,[N->.v, N->.v,-N->.v,*N->.v,/}
+I[53]={S->N='s.',#}
+I[54]={G->N.,)G->N.['i'],)G->N., G->N.['i'], G->N.,-G->N.['i'],-G->N.,*G->N.['i'],*G->N.,/G->N.['i'],/}
+I[55]={G->(E.),#G->(E.), G->(E.),-G->(E.),*G->(E.),/E->E. F,)E->E.-F,)E->E. F, E->E.-F, E->E. F,-E->E.-F,-}
+I[56]={G->(.E),)G->(.E), G->(.E),-G->(.E),*G->(.E),/E->.E F,)E->.E-F,)E->.F,)E->.E F, E->.E-F, E->.F, E->.E F,-E->.E-F,-E->.F,-F->.F*G,)F->.F/G,)F->.G,)F->.F*G, F->.F/G, F->.G, F->.F*G,-F->.F/G,-F->.G,-F->.F*G,*F->.F/G,*F->.G,*F->.F*G,/F->.F/G,/F->.G,/G->.(E),)G->.N,)G->.N['i'],)G->.i,)G->.d,)G->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,)N->.v,[N->.v, N->.v,-N->.v,*N->.v,/}
+I[57]={G->i.,)G->i., G->i.,-G->i.,*G->i.,/}
+I[58]={G->d.,)G->d., G->d.,-G->d.,*G->d.,/}
+I[59]={E->F.,)E->F., E->F.,-F->F.*G,)F->F./G,)F->F.*G, F->F./G, F->F.*G,-F->F./G,-F->F.*G,*F->F./G,*F->F.*G,/F->F./G,/}
+I[60]={F->G.,)F->G., F->G.,-F->G.,*F->G.,/}
+I[61]={N->v.,)N->v.,[N->v., N->v.,-N->v.,*N->v.,/}
+I[62]={F->F*.G,#F->F*.G, F->F*.G,-F->F*.G,*F->F*.G,/G->.(E),#G->.N,#G->.N['i'],#G->.i,#G->.d,#G->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,#N->.v,[N->.v, N->.v,-N->.v,*N->.v,/}
+I[63]={F->F/.G,#F->F/.G, F->F/.G,-F->F/.G,*F->F/.G,/G->.(E),#G->.N,#G->.N['i'],#G->.i,#G->.d,#G->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,#N->.v,[N->.v, N->.v,-N->.v,*N->.v,/}
+I[64]={G->N[.'i'],<G->N[.'i'],>G->N[.'i'],=G->N[.'i'], G->N[.'i'],-G->N[.'i'],*G->N[.'i'],/}
+I[65]={R->=.,(R->=.,vR->=.,iR->=.,d}
+I[66]={E->E .F,<E->E .F,>E->E .F,=E->E .F, E->E .F,-F->.F*G,<F->.F/G,<F->.G,<F->.F*G,>F->.F/G,>F->.G,>F->.F*G,=F->.F/G,=F->.G,=F->.F*G, F->.F/G, F->.G, F->.F*G,-F->.F/G,-F->.G,-F->.F*G,*F->.F/G,*F->.G,*F->.F*G,/F->.F/G,/F->.G,/G->.(E),<G->.N,<G->.N['i'],<G->.i,<G->.d,<G->.(E),>G->.N,>G->.N['i'],>G->.i,>G->.d,>G->.(E),=G->.N,=G->.N['i'],=G->.i,=G->.d,=G->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,<N->.v,[N->.v,>N->.v,=N->.v, N->.v,-N->.v,*N->.v,/}
+I[67]={E->E-.F,<E->E-.F,>E->E-.F,=E->E-.F, E->E-.F,-F->.F*G,<F->.F/G,<F->.G,<F->.F*G,>F->.F/G,>F->.G,>F->.F*G,=F->.F/G,=F->.G,=F->.F*G, F->.F/G, F->.G, F->.F*G,-F->.F/G,-F->.G,-F->.F*G,*F->.F/G,*F->.G,*F->.F*G,/F->.F/G,/F->.G,/G->.(E),<G->.N,<G->.N['i'],<G->.i,<G->.d,<G->.(E),>G->.N,>G->.N['i'],>G->.i,>G->.d,>G->.(E),=G->.N,=G->.N['i'],=G->.i,=G->.d,=G->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,<N->.v,[N->.v,>N->.v,=N->.v, N->.v,-N->.v,*N->.v,/}
+I[68]={B->ER.E,)E->.E F,)E->.E-F,)E->.F,)E->.E F, E->.E-F, E->.F, E->.E F,-E->.E-F,-E->.F,-F->.F*G,)F->.F/G,)F->.G,)F->.F*G, F->.F/G, F->.G, F->.F*G,-F->.F/G,-F->.G,-F->.F*G,*F->.F/G,*F->.G,*F->.F*G,/F->.F/G,/F->.G,/G->.(E),)G->.N,)G->.N['i'],)G->.i,)G->.d,)G->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,)N->.v,[N->.v, N->.v,-N->.v,*N->.v,/}
+I[69]={R-><.,(R-><.,vR-><.,iR-><.,d}
+I[70]={R->>.,(R->>.,vR->>.,iR->>.,d}
+I[71]={G->(E.),<G->(E.),>G->(E.),=G->(E.), G->(E.),-G->(E.),*G->(E.),/E->E. F,)E->E.-F,)E->E. F, E->E.-F, E->E. F,-E->E.-F,-}
+I[72]={S->w(B).oSp,#}
+I[73]={F->F*.G,<F->F*.G,>F->F*.G,=F->F*.G, F->F*.G,-F->F*.G,*F->F*.G,/G->.(E),<G->.N,<G->.N['i'],<G->.i,<G->.d,<G->.(E),>G->.N,>G->.N['i'],>G->.i,>G->.d,>G->.(E),=G->.N,=G->.N['i'],=G->.i,=G->.d,=G->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,<N->.v,[N->.v,>N->.v,=N->.v, N->.v,-N->.v,*N->.v,/}
+I[74]={F->F/.G,<F->F/.G,>F->F/.G,=F->F/.G, F->F/.G,-F->F/.G,*F->F/.G,/G->.(E),<G->.N,<G->.N['i'],<G->.i,<G->.d,<G->.(E),>G->.N,>G->.N['i'],>G->.i,>G->.d,>G->.(E),=G->.N,=G->.N['i'],=G->.i,=G->.d,=G->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,<N->.v,[N->.v,>N->.v,=N->.v, N->.v,-N->.v,*N->.v,/}
+I[75]={S->f(B).tSu,#S->f(B).tSuetSu,#}
+I[76]={S->r'C'.,#}
+I[77]={G->N['.i'],#G->N['.i'], G->N['.i'],-G->N['.i'],*G->N['.i'],/}
+I[78]={E->E F.,#E->E F., E->E F.,-F->F.*G,#F->F./G,#F->F.*G, F->F./G, F->F.*G,-F->F./G,-F->F.*G,*F->F./G,*F->F.*G,/F->F./G,/}
+I[79]={E->E-F.,#E->E-F., E->E-F.,-F->F.*G,#F->F./G,#F->F.*G, F->F./G, F->F.*G,-F->F./G,-F->F.*G,*F->F./G,*F->F.*G,/F->F./G,/}
+I[80]={S->N='s'.,#}
+I[81]={G->N[.'i'],)G->N[.'i'], G->N[.'i'],-G->N[.'i'],*G->N[.'i'],/}
+I[82]={G->(E).,#G->(E)., G->(E).,-G->(E).,*G->(E).,/}
+I[83]={E->E .F,)E->E .F, E->E .F,-F->.F*G,)F->.F/G,)F->.G,)F->.F*G, F->.F/G, F->.G, F->.F*G,-F->.F/G,-F->.G,-F->.F*G,*F->.F/G,*F->.G,*F->.F*G,/F->.F/G,/F->.G,/G->.(E),)G->.N,)G->.N['i'],)G->.i,)G->.d,)G->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,)N->.v,[N->.v, N->.v,-N->.v,*N->.v,/}
+I[84]={E->E-.F,)E->E-.F, E->E-.F,-F->.F*G,)F->.F/G,)F->.G,)F->.F*G, F->.F/G, F->.G, F->.F*G,-F->.F/G,-F->.G,-F->.F*G,*F->.F/G,*F->.G,*F->.F*G,/F->.F/G,/F->.G,/G->.(E),)G->.N,)G->.N['i'],)G->.i,)G->.d,)G->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,)N->.v,[N->.v, N->.v,-N->.v,*N->.v,/}
+I[85]={G->(E.),)G->(E.), G->(E.),-G->(E.),*G->(E.),/E->E. F,)E->E.-F,)E->E. F, E->E.-F, E->E. F,-E->E.-F,-}
+I[86]={F->F*.G,)F->F*.G, F->F*.G,-F->F*.G,*F->F*.G,/G->.(E),)G->.N,)G->.N['i'],)G->.i,)G->.d,)G->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,)N->.v,[N->.v, N->.v,-N->.v,*N->.v,/}
+I[87]={F->F/.G,)F->F/.G, F->F/.G,-F->F/.G,*F->F/.G,/G->.(E),)G->.N,)G->.N['i'],)G->.i,)G->.d,)G->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,)N->.v,[N->.v, N->.v,-N->.v,*N->.v,/}
+I[88]={F->F*G.,#F->F*G., F->F*G.,-F->F*G.,*F->F*G.,/}
+I[89]={F->F/G.,#F->F/G., F->F/G.,-F->F/G.,*F->F/G.,/}
+I[90]={G->N['.i'],<G->N['.i'],>G->N['.i'],=G->N['.i'], G->N['.i'],-G->N['.i'],*G->N['.i'],/}
+I[91]={E->E F.,<E->E F.,>E->E F.,=E->E F., E->E F.,-F->F.*G,<F->F./G,<F->F.*G,>F->F./G,>F->F.*G,=F->F./G,=F->F.*G, F->F./G, F->F.*G,-F->F./G,-F->F.*G,*F->F./G,*F->F.*G,/F->F./G,/}
+I[92]={E->E-F.,<E->E-F.,>E->E-F.,=E->E-F., E->E-F.,-F->F.*G,<F->F./G,<F->F.*G,>F->F./G,>F->F.*G,=F->F./G,=F->F.*G, F->F./G, F->F.*G,-F->F./G,-F->F.*G,*F->F./G,*F->F.*G,/F->F./G,/}
+I[93]={B->ERE.,)E->E. F,)E->E.-F,)E->E. F, E->E.-F, E->E. F,-E->E.-F,-}
+I[94]={G->(E).,<G->(E).,>G->(E).,=G->(E)., G->(E).,-G->(E).,*G->(E).,/}
+I[95]={S->w(B)o.Sp,#S->.TN,pS->.TN=C,pS->.TN[],pS->.N=E,pS->.N='s',pS->.w(B)oSp,pS->.f(B)tSu,pS->.f(B)tSuetSu,pS->.rN,pS->.r'C',pT->.n,vT->.b,vT->.y,vT->.g,vN->.v,=}
+I[96]={F->F*G.,<F->F*G.,>F->F*G.,=F->F*G., F->F*G.,-F->F*G.,*F->F*G.,/}
+I[97]={F->F/G.,<F->F/G.,>F->F/G.,=F->F/G., F->F/G.,-F->F/G.,*F->F/G.,/}
+I[98]={S->f(B)t.Su,#S->f(B)t.SuetSu,#S->.TN,uS->.TN=C,uS->.TN[],uS->.N=E,uS->.N='s',uS->.w(B)oSp,uS->.f(B)tSu,uS->.f(B)tSuetSu,uS->.rN,uS->.r'C',uT->.n,vT->.b,vT->.y,vT->.g,vN->.v,=}
+I[99]={G->N['i.'],#G->N['i.'], G->N['i.'],-G->N['i.'],*G->N['i.'],/}
+I[100]={G->N['.i'],)G->N['.i'], G->N['.i'],-G->N['.i'],*G->N['.i'],/}
+I[101]={E->E F.,)E->E F., E->E F.,-F->F.*G,)F->F./G,)F->F.*G, F->F./G, F->F.*G,-F->F./G,-F->F.*G,*F->F./G,*F->F.*G,/F->F./G,/}
+I[102]={E->E-F.,)E->E-F., E->E-F.,-F->F.*G,)F->F./G,)F->F.*G, F->F./G, F->F.*G,-F->F./G,-F->F.*G,*F->F./G,*F->F.*G,/F->F./G,/}
+I[103]={G->(E).,)G->(E)., G->(E).,-G->(E).,*G->(E).,/}
+I[104]={F->F*G.,)F->F*G., F->F*G.,-F->F*G.,*F->F*G.,/}
+I[105]={F->F/G.,)F->F/G., F->F/G.,-F->F/G.,*F->F/G.,/}
+I[106]={G->N['i.'],<G->N['i.'],>G->N['i.'],=G->N['i.'], G->N['i.'],-G->N['i.'],*G->N['i.'],/}
+I[107]={S->w(B)oS.p,#}
+I[108]={S->T.N,pS->T.N=C,pS->T.N[],pN->.v,pN->.v,=N->.v,[}
+I[109]={S->N.=E,pS->N.='s',p}
+I[110]={S->w.(B)oSp,p}
+I[111]={S->f.(B)tSu,pS->f.(B)tSuetSu,p}
+I[112]={S->r.N,pS->r.'C',pN->.v,p}
+I[113]={S->f(B)tS.u,#S->f(B)tS.uetSu,#}
+I[114]={S->T.N,uS->T.N=C,uS->T.N[],uN->.v,uN->.v,=N->.v,[}
+I[115]={S->N.=E,uS->N.='s',u}
+I[116]={S->w.(B)oSp,u}
+I[117]={S->f.(B)tSu,uS->f.(B)tSuetSu,u}
+I[118]={S->r.N,uS->r.'C',uN->.v,u}
+I[119]={G->N['i'.],#G->N['i'.], G->N['i'.],-G->N['i'.],*G->N['i'.],/}
+I[120]={G->N['i.'],)G->N['i.'], G->N['i.'],-G->N['i.'],*G->N['i.'],/}
+I[121]={G->N['i'.],<G->N['i'.],>G->N['i'.],=G->N['i'.], G->N['i'.],-G->N['i'.],*G->N['i'.],/}
+I[122]={S->w(B)oSp.,#}
+I[123]={S->TN.,pS->TN.=C,pS->TN.[],p}
+I[124]={N->v.,pN->v.,=N->v.,[}
+I[125]={S->N=.E,pS->N=.'s',pE->.E F,pE->.E-F,pE->.F,pE->.E F, E->.E-F, E->.F, E->.E F,-E->.E-F,-E->.F,-F->.F*G,pF->.F/G,pF->.G,pF->.F*G, F->.F/G, F->.G, F->.F*G,-F->.F/G,-F->.G,-F->.F*G,*F->.F/G,*F->.G,*F->.F*G,/F->.F/G,/F->.G,/G->.(E),pG->.N,pG->.N['i'],pG->.i,pG->.d,pG->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,pN->.v,[N->.v, N->.v,-N->.v,*N->.v,/}
+I[126]={S->w(.B)oSp,pB->.ERE,)E->.E F,<E->.E F,>E->.E F,=E->.E-F,<E->.E-F,>E->.E-F,=E->.F,<E->.F,>E->.F,=E->.E F, E->.E-F, E->.F, E->.E F,-E->.E-F,-E->.F,-F->.F*G,<F->.F/G,<F->.G,<F->.F*G,>F->.F/G,>F->.G,>F->.F*G,=F->.F/G,=F->.G,=F->.F*G, F->.F/G, F->.G, F->.F*G,-F->.F/G,-F->.G,-F->.F*G,*F->.F/G,*F->.G,*F->.F*G,/F->.F/G,/F->.G,/G->.(E),<G->.N,<G->.N['i'],<G->.i,<G->.d,<G->.(E),>G->.N,>G->.N['i'],>G->.i,>G->.d,>G->.(E),=G->.N,=G->.N['i'],=G->.i,=G->.d,=G->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,<N->.v,[N->.v,>N->.v,=N->.v, N->.v,-N->.v,*N->.v,/}
+I[127]={S->f(.B)tSu,pS->f(.B)tSuetSu,pB->.ERE,)E->.E F,<E->.E F,>E->.E F,=E->.E-F,<E->.E-F,>E->.E-F,=E->.F,<E->.F,>E->.F,=E->.E F, E->.E-F, E->.F, E->.E F,-E->.E-F,-E->.F,-F->.F*G,<F->.F/G,<F->.G,<F->.F*G,>F->.F/G,>F->.G,>F->.F*G,=F->.F/G,=F->.G,=F->.F*G, F->.F/G, F->.G, F->.F*G,-F->.F/G,-F->.G,-F->.F*G,*F->.F/G,*F->.G,*F->.F*G,/F->.F/G,/F->.G,/G->.(E),<G->.N,<G->.N['i'],<G->.i,<G->.d,<G->.(E),>G->.N,>G->.N['i'],>G->.i,>G->.d,>G->.(E),=G->.N,=G->.N['i'],=G->.i,=G->.d,=G->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,<N->.v,[N->.v,>N->.v,=N->.v, N->.v,-N->.v,*N->.v,/}
+I[128]={S->rN.,p}
+I[129]={S->r'.C',pC->.i,'C->.d,'C->.s,'}
+I[130]={N->v.,p}
+I[131]={S->f(B)tSu.,#S->f(B)tSu.etSu,#}
+I[132]={S->TN.,uS->TN.=C,uS->TN.[],u}
+I[133]={N->v.,uN->v.,=N->v.,[}
+I[134]={S->N=.E,uS->N=.'s',uE->.E F,uE->.E-F,uE->.F,uE->.E F, E->.E-F, E->.F, E->.E F,-E->.E-F,-E->.F,-F->.F*G,uF->.F/G,uF->.G,uF->.F*G, F->.F/G, F->.G, F->.F*G,-F->.F/G,-F->.G,-F->.F*G,*F->.F/G,*F->.G,*F->.F*G,/F->.F/G,/F->.G,/G->.(E),uG->.N,uG->.N['i'],uG->.i,uG->.d,uG->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,uN->.v,[N->.v, N->.v,-N->.v,*N->.v,/}
+I[135]={S->w(.B)oSp,uB->.ERE,)E->.E F,<E->.E F,>E->.E F,=E->.E-F,<E->.E-F,>E->.E-F,=E->.F,<E->.F,>E->.F,=E->.E F, E->.E-F, E->.F, E->.E F,-E->.E-F,-E->.F,-F->.F*G,<F->.F/G,<F->.G,<F->.F*G,>F->.F/G,>F->.G,>F->.F*G,=F->.F/G,=F->.G,=F->.F*G, F->.F/G, F->.G, F->.F*G,-F->.F/G,-F->.G,-F->.F*G,*F->.F/G,*F->.G,*F->.F*G,/F->.F/G,/F->.G,/G->.(E),<G->.N,<G->.N['i'],<G->.i,<G->.d,<G->.(E),>G->.N,>G->.N['i'],>G->.i,>G->.d,>G->.(E),=G->.N,=G->.N['i'],=G->.i,=G->.d,=G->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,<N->.v,[N->.v,>N->.v,=N->.v, N->.v,-N->.v,*N->.v,/}
+I[136]={S->f(.B)tSu,uS->f(.B)tSuetSu,uB->.ERE,)E->.E F,<E->.E F,>E->.E F,=E->.E-F,<E->.E-F,>E->.E-F,=E->.F,<E->.F,>E->.F,=E->.E F, E->.E-F, E->.F, E->.E F,-E->.E-F,-E->.F,-F->.F*G,<F->.F/G,<F->.G,<F->.F*G,>F->.F/G,>F->.G,>F->.F*G,=F->.F/G,=F->.G,=F->.F*G, F->.F/G, F->.G, F->.F*G,-F->.F/G,-F->.G,-F->.F*G,*F->.F/G,*F->.G,*F->.F*G,/F->.F/G,/F->.G,/G->.(E),<G->.N,<G->.N['i'],<G->.i,<G->.d,<G->.(E),>G->.N,>G->.N['i'],>G->.i,>G->.d,>G->.(E),=G->.N,=G->.N['i'],=G->.i,=G->.d,=G->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,<N->.v,[N->.v,>N->.v,=N->.v, N->.v,-N->.v,*N->.v,/}
+I[137]={S->rN.,u}
+I[138]={S->r'.C',uC->.i,'C->.d,'C->.s,'}
+I[139]={N->v.,u}
+I[140]={G->N['i'].,#G->N['i']., G->N['i'].,-G->N['i'].,*G->N['i'].,/}
+I[141]={G->N['i'.],)G->N['i'.], G->N['i'.],-G->N['i'.],*G->N['i'.],/}
+I[142]={G->N['i'].,<G->N['i'].,>G->N['i'].,=G->N['i']., G->N['i'].,-G->N['i'].,*G->N['i'].,/}
+I[143]={S->TN=.C,pC->.i,pC->.d,pC->.s,p}
+I[144]={S->TN[.],p}
+I[145]={G->N.,pG->N.['i'],pG->N., G->N.['i'], G->N.,-G->N.['i'],-G->N.,*G->N.['i'],*G->N.,/G->N.['i'],/}
+I[146]={S->N=E.,pE->E. F,pE->E.-F,pE->E. F, E->E.-F, E->E. F,-E->E.-F,-}
+I[147]={S->N='.s',p}
+I[148]={G->(.E),pG->(.E), G->(.E),-G->(.E),*G->(.E),/E->.E F,)E->.E-F,)E->.F,)E->.E F, E->.E-F, E->.F, E->.E F,-E->.E-F,-E->.F,-F->.F*G,)F->.F/G,)F->.G,)F->.F*G, F->.F/G, F->.G, F->.F*G,-F->.F/G,-F->.G,-F->.F*G,*F->.F/G,*F->.G,*F->.F*G,/F->.F/G,/F->.G,/G->.(E),)G->.N,)G->.N['i'],)G->.i,)G->.d,)G->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,)N->.v,[N->.v, N->.v,-N->.v,*N->.v,/}
+I[149]={G->i.,pG->i., G->i.,-G->i.,*G->i.,/}
+I[150]={G->d.,pG->d., G->d.,-G->d.,*G->d.,/}
+I[151]={E->F.,pE->F., E->F.,-F->F.*G,pF->F./G,pF->F.*G, F->F./G, F->F.*G,-F->F./G,-F->F.*G,*F->F./G,*F->F.*G,/F->F./G,/}
+I[152]={F->G.,pF->G., F->G.,-F->G.,*F->G.,/}
+I[153]={N->v.,pN->v.,[N->v., N->v.,-N->v.,*N->v.,/}
+I[154]={S->w(B.)oSp,p}
+I[155]={S->f(B.)tSu,pS->f(B.)tSuetSu,p}
+I[156]={S->r'C.',p}
+I[157]={S->f(B)tSue.tSu,#}
+I[158]={S->TN=.C,uC->.i,uC->.d,uC->.s,u}
+I[159]={S->TN[.],u}
+I[160]={G->N.,uG->N.['i'],uG->N., G->N.['i'], G->N.,-G->N.['i'],-G->N.,*G->N.['i'],*G->N.,/G->N.['i'],/}
+I[161]={S->N=E.,uE->E. F,uE->E.-F,uE->E. F, E->E.-F, E->E. F,-E->E.-F,-}
+I[162]={S->N='.s',u}
+I[163]={G->(.E),uG->(.E), G->(.E),-G->(.E),*G->(.E),/E->.E F,)E->.E-F,)E->.F,)E->.E F, E->.E-F, E->.F, E->.E F,-E->.E-F,-E->.F,-F->.F*G,)F->.F/G,)F->.G,)F->.F*G, F->.F/G, F->.G, F->.F*G,-F->.F/G,-F->.G,-F->.F*G,*F->.F/G,*F->.G,*F->.F*G,/F->.F/G,/F->.G,/G->.(E),)G->.N,)G->.N['i'],)G->.i,)G->.d,)G->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,)N->.v,[N->.v, N->.v,-N->.v,*N->.v,/}
+I[164]={G->i.,uG->i., G->i.,-G->i.,*G->i.,/}
+I[165]={G->d.,uG->d., G->d.,-G->d.,*G->d.,/}
+I[166]={E->F.,uE->F., E->F.,-F->F.*G,uF->F./G,uF->F.*G, F->F./G, F->F.*G,-F->F./G,-F->F.*G,*F->F./G,*F->F.*G,/F->F./G,/}
+I[167]={F->G.,uF->G., F->G.,-F->G.,*F->G.,/}
+I[168]={N->v.,uN->v.,[N->v., N->v.,-N->v.,*N->v.,/}
+I[169]={S->w(B.)oSp,u}
+I[170]={S->f(B.)tSu,uS->f(B.)tSuetSu,u}
+I[171]={S->r'C.',u}
+I[172]={G->N['i'].,)G->N['i']., G->N['i'].,-G->N['i'].,*G->N['i'].,/}
+I[173]={S->TN=C.,p}
+I[174]={C->s.,p}
+I[175]={C->i.,p}
+I[176]={C->d.,p}
+I[177]={S->TN[].,p}
+I[178]={G->N[.'i'],pG->N[.'i'], G->N[.'i'],-G->N[.'i'],*G->N[.'i'],/}
+I[179]={E->E .F,pE->E .F, E->E .F,-F->.F*G,pF->.F/G,pF->.G,pF->.F*G, F->.F/G, F->.G, F->.F*G,-F->.F/G,-F->.G,-F->.F*G,*F->.F/G,*F->.G,*F->.F*G,/F->.F/G,/F->.G,/G->.(E),pG->.N,pG->.N['i'],pG->.i,pG->.d,pG->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,pN->.v,[N->.v, N->.v,-N->.v,*N->.v,/}
+I[180]={E->E-.F,pE->E-.F, E->E-.F,-F->.F*G,pF->.F/G,pF->.G,pF->.F*G, F->.F/G, F->.G, F->.F*G,-F->.F/G,-F->.G,-F->.F*G,*F->.F/G,*F->.G,*F->.F*G,/F->.F/G,/F->.G,/G->.(E),pG->.N,pG->.N['i'],pG->.i,pG->.d,pG->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,pN->.v,[N->.v, N->.v,-N->.v,*N->.v,/}
+I[181]={S->N='s.',p}
+I[182]={G->(E.),pG->(E.), G->(E.),-G->(E.),*G->(E.),/E->E. F,)E->E.-F,)E->E. F, E->E.-F, E->E. F,-E->E.-F,-}
+I[183]={F->F*.G,pF->F*.G, F->F*.G,-F->F*.G,*F->F*.G,/G->.(E),pG->.N,pG->.N['i'],pG->.i,pG->.d,pG->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,pN->.v,[N->.v, N->.v,-N->.v,*N->.v,/}
+I[184]={F->F/.G,pF->F/.G, F->F/.G,-F->F/.G,*F->F/.G,/G->.(E),pG->.N,pG->.N['i'],pG->.i,pG->.d,pG->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,pN->.v,[N->.v, N->.v,-N->.v,*N->.v,/}
+I[185]={S->w(B).oSp,p}
+I[186]={S->f(B).tSu,pS->f(B).tSuetSu,p}
+I[187]={S->r'C'.,p}
+I[188]={S->f(B)tSuet.Su,#S->.TN,uS->.TN=C,uS->.TN[],uS->.N=E,uS->.N='s',uS->.w(B)oSp,uS->.f(B)tSu,uS->.f(B)tSuetSu,uS->.rN,uS->.r'C',uT->.n,vT->.b,vT->.y,vT->.g,vN->.v,=}
+I[189]={S->TN=C.,u}
+I[190]={C->s.,u}
+I[191]={C->i.,u}
+I[192]={C->d.,u}
+I[193]={S->TN[].,u}
+I[194]={G->N[.'i'],uG->N[.'i'], G->N[.'i'],-G->N[.'i'],*G->N[.'i'],/}
+I[195]={E->E .F,uE->E .F, E->E .F,-F->.F*G,uF->.F/G,uF->.G,uF->.F*G, F->.F/G, F->.G, F->.F*G,-F->.F/G,-F->.G,-F->.F*G,*F->.F/G,*F->.G,*F->.F*G,/F->.F/G,/F->.G,/G->.(E),uG->.N,uG->.N['i'],uG->.i,uG->.d,uG->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,uN->.v,[N->.v, N->.v,-N->.v,*N->.v,/}
+I[196]={E->E-.F,uE->E-.F, E->E-.F,-F->.F*G,uF->.F/G,uF->.G,uF->.F*G, F->.F/G, F->.G, F->.F*G,-F->.F/G,-F->.G,-F->.F*G,*F->.F/G,*F->.G,*F->.F*G,/F->.F/G,/F->.G,/G->.(E),uG->.N,uG->.N['i'],uG->.i,uG->.d,uG->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,uN->.v,[N->.v, N->.v,-N->.v,*N->.v,/}
+I[197]={S->N='s.',u}
+I[198]={G->(E.),uG->(E.), G->(E.),-G->(E.),*G->(E.),/E->E. F,)E->E.-F,)E->E. F, E->E.-F, E->E. F,-E->E.-F,-}
+I[199]={F->F*.G,uF->F*.G, F->F*.G,-F->F*.G,*F->F*.G,/G->.(E),uG->.N,uG->.N['i'],uG->.i,uG->.d,uG->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,uN->.v,[N->.v, N->.v,-N->.v,*N->.v,/}
+I[200]={F->F/.G,uF->F/.G, F->F/.G,-F->F/.G,*F->F/.G,/G->.(E),uG->.N,uG->.N['i'],uG->.i,uG->.d,uG->.(E), G->.N, G->.N['i'], G->.i, G->.d, G->.(E),-G->.N,-G->.N['i'],-G->.i,-G->.d,-G->.(E),*G->.N,*G->.N['i'],*G->.i,*G->.d,*G->.(E),/G->.N,/G->.N['i'],/G->.i,/G->.d,/N->.v,uN->.v,[N->.v, N->.v,-N->.v,*N->.v,/}
+I[201]={S->w(B).oSp,u}
+I[202]={S->f(B).tSu,uS->f(B).tSuetSu,u}
+I[203]={S->r'C'.,u}
+I[204]={G->N['.i'],pG->N['.i'], G->N['.i'],-G->N['.i'],*G->N['.i'],/}
+I[205]={E->E F.,pE->E F., E->E F.,-F->F.*G,pF->F./G,pF->F.*G, F->F./G, F->F.*G,-F->F./G,-F->F.*G,*F->F./G,*F->F.*G,/F->F./G,/}
+I[206]={E->E-F.,pE->E-F., E->E-F.,-F->F.*G,pF->F./G,pF->F.*G, F->F./G, F->F.*G,-F->F./G,-F->F.*G,*F->F./G,*F->F.*G,/F->F./G,/}
+I[207]={S->N='s'.,p}
+I[208]={G->(E).,pG->(E)., G->(E).,-G->(E).,*G->(E).,/}
+I[209]={F->F*G.,pF->F*G., F->F*G.,-F->F*G.,*F->F*G.,/}
+I[210]={F->F/G.,pF->F/G., F->F/G.,-F->F/G.,*F->F/G.,/}
+I[211]={S->w(B)o.Sp,pS->.TN,pS->.TN=C,pS->.TN[],pS->.N=E,pS->.N='s',pS->.w(B)oSp,pS->.f(B)tSu,pS->.f(B)tSuetSu,pS->.rN,pS->.r'C',pT->.n,vT->.b,vT->.y,vT->.g,vN->.v,=}
+I[212]={S->f(B)t.Su,pS->f(B)t.SuetSu,pS->.TN,uS->.TN=C,uS->.TN[],uS->.N=E,uS->.N='s',uS->.w(B)oSp,uS->.f(B)tSu,uS->.f(B)tSuetSu,uS->.rN,uS->.r'C',uT->.n,vT->.b,vT->.y,vT->.g,vN->.v,=}
+I[213]={S->f(B)tSuetS.u,#}
+I[214]={G->N['.i'],uG->N['.i'], G->N['.i'],-G->N['.i'],*G->N['.i'],/}
+I[215]={E->E F.,uE->E F., E->E F.,-F->F.*G,uF->F./G,uF->F.*G, F->F./G, F->F.*G,-F->F./G,-F->F.*G,*F->F./G,*F->F.*G,/F->F./G,/}
+I[216]={E->E-F.,uE->E-F., E->E-F.,-F->F.*G,uF->F./G,uF->F.*G, F->F./G, F->F.*G,-F->F./G,-F->F.*G,*F->F./G,*F->F.*G,/F->F./G,/}
+I[217]={S->N='s'.,u}
+I[218]={G->(E).,uG->(E)., G->(E).,-G->(E).,*G->(E).,/}
+I[219]={F->F*G.,uF->F*G., F->F*G.,-F->F*G.,*F->F*G.,/}
+I[220]={F->F/G.,uF->F/G., F->F/G.,-F->F/G.,*F->F/G.,/}
+I[221]={S->w(B)o.Sp,uS->.TN,pS->.TN=C,pS->.TN[],pS->.N=E,pS->.N='s',pS->.w(B)oSp,pS->.f(B)tSu,pS->.f(B)tSuetSu,pS->.rN,pS->.r'C',pT->.n,vT->.b,vT->.y,vT->.g,vN->.v,=}
+I[222]={S->f(B)t.Su,uS->f(B)t.SuetSu,uS->.TN,uS->.TN=C,uS->.TN[],uS->.N=E,uS->.N='s',uS->.w(B)oSp,uS->.f(B)tSu,uS->.f(B)tSuetSu,uS->.rN,uS->.r'C',uT->.n,vT->.b,vT->.y,vT->.g,vN->.v,=}
+I[223]={G->N['i.'],pG->N['i.'], G->N['i.'],-G->N['i.'],*G->N['i.'],/}
+I[224]={S->w(B)oS.p,p}
+I[225]={S->f(B)tS.u,pS->f(B)tS.uetSu,p}
+I[226]={S->f(B)tSuetSu.,#}
+I[227]={G->N['i.'],uG->N['i.'], G->N['i.'],-G->N['i.'],*G->N['i.'],/}
+I[228]={S->w(B)oS.p,u}
+I[229]={S->f(B)tS.u,uS->f(B)tS.uetSu,u}
+I[230]={G->N['i'.],pG->N['i'.], G->N['i'.],-G->N['i'.],*G->N['i'.],/}
+I[231]={S->w(B)oSp.,p}
+I[232]={S->f(B)tSu.,pS->f(B)tSu.etSu,p}
+I[233]={G->N['i'.],uG->N['i'.], G->N['i'.],-G->N['i'.],*G->N['i'.],/}
+I[234]={S->w(B)oSp.,u}
+I[235]={S->f(B)tSu.,uS->f(B)tSu.etSu,u}
+I[236]={G->N['i'].,pG->N['i']., G->N['i'].,-G->N['i'].,*G->N['i'].,/}
+I[237]={S->f(B)tSue.tSu,p}
+I[238]={G->N['i'].,uG->N['i']., G->N['i'].,-G->N['i'].,*G->N['i'].,/}
+I[239]={S->f(B)tSue.tSu,u}
+I[240]={S->f(B)tSuet.Su,pS->.TN,uS->.TN=C,uS->.TN[],uS->.N=E,uS->.N='s',uS->.w(B)oSp,uS->.f(B)tSu,uS->.f(B)tSuetSu,uS->.rN,uS->.r'C',uT->.n,vT->.b,vT->.y,vT->.g,vN->.v,=}
+I[241]={S->f(B)tSuet.Su,uS->.TN,uS->.TN=C,uS->.TN[],uS->.N=E,uS->.N='s',uS->.w(B)oSp,uS->.f(B)tSu,uS->.f(B)tSuetSu,uS->.rN,uS->.r'C',uT->.n,vT->.b,vT->.y,vT->.g,vN->.v,=}
+I[242]={S->f(B)tSuetS.u,p}
+I[243]={S->f(B)tSuetS.u,u}
+I[244]={S->f(B)tSuetSu.,p}
+I[245]={S->f(B)tSuetSu.,u}
