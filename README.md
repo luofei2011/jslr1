@@ -20,7 +20,7 @@ javascript实现的LR(1)分析表构建
 
 VERSION
 ====
-0.5
+1.0
 
 example
 ====
