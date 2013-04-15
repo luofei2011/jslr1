@@ -1,16 +1,15 @@
 jslr
 ====
 
-javascript实现的LR(1)分析表构建
+#####javascript实现的LR(1)分析表构建
 
-1. 通过文法的输入(只能如下的格式:).用LR(1)算法构建分析表
+1. 通过文法的输入(只能[如下](https://github.com/luofei2011/jslr1#example)的格式:).用LR(1)算法构建分析表
 	* 文法目前只能支持单独的字母,后期会加入映射转换的功能如(if->con | I->C);
 	* 你不需要在刚输入的时候就使用拓广文法,后期程序会自动添加
 	* 最好按照给定的格式,第一行是非终结符集合,第二行是终结符集合
 2. 给analysis_alo()函数传入一个string的参数(必须以'#')结尾.该函数能分析出
    此字符串是否能通过该文法分析,返回状态'acc'或则出错.
-3. 该程序目前还没有操作本地文件的功能,因此若想保存数据是能手动copy
-4. 函数式编程过程...没想好如何用面向对象来体现.
+3. 函数式编程过程...没想好如何用面向对象来体现.
 
 VERSION
 ====
@@ -32,7 +31,28 @@ example
 
 ######example 2 代码语法分析
 
-文法(V代表非终结符,T代表终结符):
+原始文法:
+
+	#PROGRAM:程序开始
+	#sconst: string const
+	#iconst: int const
+	#dconst: double const
+	
+	PROGRAM::=NT N | NT N=CONST | NT N[]
+	PROGRAM::=N=S | N='sconst'
+	PROGRAM::=while(B) do PROGRAM done
+	PROGRAM::=if(B) then PROGRAM fi | if(B) then PROGRAM fi else then PROGRAM fi
+	PROGRAM::=echo N | echo 'CONST'
+	CONST::=iconst | dconst | sconst
+	NT::=int | double | string | array
+	S::=S+S1 | S-S1 | S1
+	S1::=S1*S2 | S1/S2 | S2
+	S2::=(S) | N | N['iconst'] | iconst | dconst
+	B::=S ROP S
+	ROP::=< | > | =
+	N::=v	#v是标识符
+
+PS:由于目前只能识别单个字母的文法,故转码为如下文法(V:非终结符,T:终结符):
 
 	V={T,N,S,C,E,B,F,G,R}
 	T={s,i,d,w,o,p,f,t,u,e,r,v,n,b,y,g,[,],',(,),*,/,+,-,>,<,=}
