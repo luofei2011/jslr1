@@ -18,19 +18,78 @@ VERSION
 
 example
 ====
+######example 1 
 
 	V={S,E,T}
-
 	T={i,-,(,)}
-
 	S->E
-
 	E->T
-
 	E->E-T
-
 	T->i
-
 	T->(E)
 
 测试串:i-(i)-i#
+
+######example 2 代码语法分析
+
+文法(V代表非终结符,T代表终结符):
+
+	V={T,N,S,C,E,B,F,G,R}
+	T={s,i,d,w,o,p,f,t,u,e,r,v,n,b,y,g,[,],',(,),*,/,+,-,>,<,=}
+	S->TN
+	S->TN=C
+	S->TN[]
+	S->N=E
+	S->N='s'
+	S->w(B)oSp
+	S->f(B)tSu
+	S->f(B)tSuetSu
+	S->rN
+	S->r'C'
+	C->i
+	C->d
+	C->s
+	T->n
+	T->b
+	T->y
+	T->g
+	E->E+F
+	E->E-F
+	E->F
+	F->F*G
+	F->F/G
+	F->G
+	G->(E)
+	G->N
+	G->N['i']
+	G->i
+	G->d
+	B->ERE
+	R-><
+	R->>
+	R->=
+	N->v
+
+测试代码(参照bash语法):
+
+	int luofei = 78
+	double j = 88.3
+	int a[]
+	if(hao>78)then
+		echo 'dslfdsfdsf'
+	fi
+	else then
+		echo i
+	fi
+	while(i>4)do
+		echo i
+		if(i>3) then
+			echo 'hello world!'
+		fi
+	done
+
+README
+====
+
+实现过程更详细的解读请参考[这里](http://www.cnblogs.com/Poised-flw/archive/2013/04/13/3019385.html)
+
