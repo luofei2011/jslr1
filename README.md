@@ -38,10 +38,12 @@ example
 	#iconst: int const
 	#dconst: double const
 	
+	PROGRAMM::=PROGRAM
+	PROGRAMM::=PROGRAM PROGRAMM
 	PROGRAM::=NT N | NT N=CONST | NT N[]
 	PROGRAM::=N=S | N='sconst'
-	PROGRAM::=while(B) do PROGRAM done
-	PROGRAM::=if(B) then PROGRAM fi | if(B) then PROGRAM fi else then PROGRAM fi
+	PROGRAM::=while(B) do PROGRAMM done
+	PROGRAM::=if(B) then PROGRAMM fi | if(B) then PROGRAMM fi else then PROGRAMM fi
 	PROGRAM::=echo N | echo 'CONST'
 	CONST::=iconst | dconst | sconst
 	NT::=int | double | string | array
