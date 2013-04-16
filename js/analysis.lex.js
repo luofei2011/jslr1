@@ -3,12 +3,16 @@ var error = [];
 
 /*
  *词法分析部分,单独对每行语句进行检测
- *	@param	array	code	数组形式的代码段
+ *	@param	array	code	数组形式的代码段,按行分割
  *	@return	array	str		数组形式返回编码后的代码段
  *
  * */
 function analysis_lex(code) {
 	var str = [];	//记录转换后的每个语句.
+
+	//去掉每行的前后空格
+	var code = trim(code);
+
 	for(var i=0; i<code.length; i++){
 		//第一步排除掉空行
 		if(code[i].length){
@@ -52,7 +56,34 @@ function analysis_lex(code) {
 				}
 				str.push(trans_(item));
 			//普通的赋值语句
+			/*
+			 *	原则:
+			 *
+			 *		1.声明即为全局,无局部变量
+			 *		2.变量类型不用完全匹配,但程序会自动处理
+			 *		3.可重复声明变量,所之前已存在会覆盖
+			 *		4.所有的变量声明以前必须有类型关键字
+			 *		5.变量声明的时候可以不赋值,程序为自动给默认值
+			 *		6.可销毁变量delete
+			 *		7.允许多个变量同时声明,不同名字之间用','隔开
+			 *
+			 *	example:
+			 *
+			 *		int a;
+			 *		int a = 4;
+			 *		a = b;
+			 *
+			 *	method:
+			 *
+			 *		分两步分析.(1)赋值类型,(2)声明类型
+			 *
+			 * */
 			}else{
+				console.log(item);
+				if(!storeVar(item)){
+					error.push(item+': 非法赋值或者变量未定义,请检查');
+					return false
+				}
 				str.push(trans_(item));
 			}
 		}
@@ -124,4 +155,11 @@ function isMatch(st,ed,i,len,str){
 		if(str[j].indexOf(ed) != -1)
 			return true;
 	return false;
+}
+
+//消除每项数组前后空格
+function trim(arr){
+	for(var i in arr)
+		arr[i] = arr[i].replace(/(^\s*)|(\s*$)/g,"");
+	return arr;
 }

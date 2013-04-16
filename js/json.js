@@ -54,6 +54,8 @@ function dealCode(){
 	}
 	value = analysis_lex(value);
 	value = mergeIfElse(value);
+
+	//按块进行语法分析
 	for(var i in value){
 		str += analysis_alo(value[i]+'#');
 	}
@@ -68,6 +70,7 @@ function dealCode(){
 		error = [];
 	}
 	$("display").innerHTML = str;
+	console.log(Global);
 }
 
 /*合并一下存在if_else的情况*/

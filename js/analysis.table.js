@@ -166,8 +166,15 @@ function getValue() {
 
 /*
  *	求FIRST集合
- *	T->T*F
- *	T->T/F会产生死循环
+ *	若出现以下情况(存在左递归):
+ *		T->T*F
+ *		T->T/F会产生死循环
+ *	则程序自动处理,不需要手动消除.
+ *	@param	array	pro_G	存储自己的文法.如:S->0S1等
+ *	@param	array	V		所有的非终结符集合
+ *	@param	array	T		所有的终结符集合
+ *	@return array	first	返回first集合
+ *
  * */
 function getFirstByOne(value) {
 	var first = [];	
