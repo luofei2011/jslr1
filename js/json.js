@@ -10,6 +10,7 @@ var _table = {
 	S1:'F',
 	S2:'G',
 	ROP:'R',
+	Q:'Q',
 
 	//终结符
     variable:'v',
@@ -53,7 +54,9 @@ function dealCode(){
 		value[i] = value[i].replace(/\/\/.*?$/g,'');
 	}
 	value = analysis_lex(value);
+	console.log(value);
 	value = mergeIfElse(value);
+	console.log(value);
 
 	//按块进行语法分析
 	for(var i in value){
@@ -78,9 +81,11 @@ function mergeIfElse(value){
 	var arr = [];
 	for(var i=0; i<value.length; i++){
 		//这句代表是if_else
-		if(value[i][0] == 'f' && value[i+1][0] == 'e'){
-			arr.push(value[i]+value[i+1]);
-			i++;
+		if(value[i][0] == 'f' && i < value.length-1){
+			if(value[i+1][0] == 'e'){
+				arr.push(value[i]+value[i+1]);
+				i++;
+			}
 		}
 		//其它情况不做处理
 		else

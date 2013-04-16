@@ -36,6 +36,8 @@ function analysis_lex(code) {
 						break;
 					}
 					item += ' '+code[i];
+					//记录下生成的变量
+					storeVar(code[i]);
 					i++;
 				}
 				str.push(trans_(item));
@@ -52,6 +54,7 @@ function analysis_lex(code) {
 						break;
 					}
 					item += ' ' + code[i];
+					storeVar(code[i]);
 					i++;
 				}
 				str.push(trans_(item));
@@ -99,6 +102,7 @@ function trans_(str) {
 	var now = '';
 	//字符串已匹配好
 	var str = str.replace(/\'.*?\'/g,'\'s\'');
+	console.log('str:'+str );
 	for(var i=0; i<str.length; i++){
 		//没遇到边界符的时候一直读取数据直到最后一位
 		if(!is_inArray(str[i],band) && str[i] != ' '){

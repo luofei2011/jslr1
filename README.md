@@ -54,9 +54,11 @@ example
 
 PS:由于目前只能识别单个字母的文法,故转码为如下文法(V:非终结符,T:终结符):
 
-	V={T,N,S,C,E,B,F,G,R}
+	V={T,N,S,C,E,B,F,G,R,Q}
 	T={s,i,d,w,o,p,f,t,u,e,r,v,n,b,y,g,[,],',(,),*,/,+,-,>,<,=}
 	S->TN
+	Q->S
+	Q->SQ
 	S->TN=C
 	S->TN[]
 	S->N=E
