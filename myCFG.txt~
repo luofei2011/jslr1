@@ -1,0 +1,34 @@
+PROGRAM -> NT N
+PROGRAMM -> PROGRAM
+PROGRAM -> PROGRAM PROGRAMM
+PROGRAM -> NT N=CONST
+PROGRAM -> NT N[]
+PROGRAM -> N=S
+PROGRAM -> N='sconst'
+PROGRAM -> while(B) do PROGRAM done
+PROGRAM -> if(B) then PROGRAM fi
+PROGRAM -> if(B) then PROGRAM fi else then PROGRAM fi
+PROGRAM -> echo N
+PROGRAM -> echo 'sconst'
+CONST -> iconst
+CONST -> dconst
+CONST -> 'sconst'
+NT -> int
+NT -> double
+NT -> string
+S -> S+S1
+S -> S-S1
+S -> S1
+S1 -> S1*S2
+S1 -> S1/S2
+S1 -> S2
+S2 -> (S)
+S2 -> N
+S2 -> N['iconst']
+S2 -> iconst
+S2 -> dconst
+B -> S ROP S
+ROP -> <
+ROP -> >
+ROP -> =
+N -> v
