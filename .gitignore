@@ -3,3 +3,5 @@
 /img/
 
 *.txt
+*.txt~
+*.swp
