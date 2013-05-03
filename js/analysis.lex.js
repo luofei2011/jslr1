@@ -58,6 +58,10 @@ function analysis_lex(code) {
 					i++;
 				}
 				str.push(trans_(item));
+
+			// 输出语句
+			} else if ( item.indexOf('echo') != -1 ) {
+				str.push( trans_(item) );
 			//普通的赋值语句
 			/*
 			 *	原则:
@@ -81,8 +85,7 @@ function analysis_lex(code) {
 			 *		分两步分析.(1)赋值类型,(2)声明类型
 			 *
 			 * */
-			}else{
-				console.log(item);
+			} else {
 				if(!storeVar(item)){
 					error.push(item+': 非法赋值或者变量未定义,请检查');
 					return false
@@ -91,6 +94,10 @@ function analysis_lex(code) {
 			}
 		}
 	}
+	var_value.reverse();
+	sy_value.reverse();
+	console.log(var_value);
+	console.log(sy_value);
 	return str;
 }
 
@@ -100,9 +107,17 @@ function trans_(str) {
 	var band = ['(',')','-','+','*','/','=','>','<','\'','[',']'];
 	var str_out = '';
 	var now = '';
+
+	// 首先把字符串全部存起来
+	if ( str.indexOf('\'') != -1 ) {
+		var _str = str.slice( str.indexOf('\'') + 1, str.length );
+		if ( _str.indexOf('\'') != -1 ) {
+			var __str = _str.slice( 0, _str.indexOf('\'') );
+			sy_value.push( __str );
+		}
+	}
 	//字符串已匹配好
 	var str = str.replace(/\'.*?\'/g,'\'s\'');
-	console.log('str:'+str );
 	for(var i=0; i<str.length; i++){
 		//没遇到边界符的时候一直读取数据直到最后一位
 		if(!is_inArray(str[i],band) && str[i] != ' '){
@@ -111,7 +126,7 @@ function trans_(str) {
 				continue;
 		}
 		//是否为定义好的关键字
-		if(_table[now.toLowerCase()] != undefined){
+		if(_table[now.toLowerCase()] !== undefined){
 			str_out += _table[now];
 		//不是关键字有几种情况:
 		//	1.是标识符---->variable(v)
@@ -119,23 +134,37 @@ function trans_(str) {
 		//	3.是浮点型---->double(dconst)
 		//	4.string类型在刚开始已经匹配好
 		}else{
+			//console.log( now );
 			//判断是否为空
 			if(now.length){
 				//除掉开始已经匹配好的字符串变量
-				if(str[i] == '\'' && str[i-2] == '\'')
+				if(str[i] == '\'' && str[i-2] == '\'') {
 					str_out += now;
-				else{
-					//标识符
-					if(isNaN(now))
+				} else {
+					// 变量标识符
+					if(isNaN(now)) {
+						if( typeof Global[ now ] === 'undefined' ){
+							error.push(now+': 未声明的变量!');
+							return false
+						}
 						str_out += _table['variable'];	//'v'
+
+						//if( var_value.indexOf( now ) != -1 ) {
+						//	var_value[ var_value.indexOf( now ) ] = '';
+						//	var_value = var_value.join('|').split('|');
+						//} else {
+							var_value.push( now );
+						//}
 					//数值常量
-					else{ 
+					} else { 
 						//浮点型数据
-						if(now.indexOf('.') != -1)
+						if(now.indexOf('.') != -1) {
 							str_out += _table['dconst'];
 						//整型数据
-						else
+						} else {
 							str_out += _table['iconst'];
+						}
+						sy_value.push( now );
 					}
 				}
 			}

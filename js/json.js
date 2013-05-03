@@ -54,17 +54,28 @@ function dealCode(){
 		value[i] = value[i].replace(/\/\/.*?$/g,'');
 	}
 	value = analysis_lex(value);
-	console.log(value);
 	value = mergeIfElse(value);
-	console.log(value);
 
 	//按块进行语法分析
 	for(var i in value){
+
+		var _temp = value[i];
 		str += analysis_alo(value[i]+'#');
+
+		// if
+		if ( _temp.indexOf('f') != -1 ) {
+			
+			// if-else
+			if ( _temp.indexOf('e') != -1 ) {
+			} else {
+				var _con = _temp.slice( _temp.indexOf('(') + 1, _temp.indexOf(')') );
+			}
+		// while
+		} else if ( value[i].indexOf('w') ) {
+		}
 	}
 	var err = '';
 	if(error.length){
-		console.log(error);
 		for(var i in error){
 			err += '<p>'+error[i]+'</p>';
 		}
@@ -73,7 +84,6 @@ function dealCode(){
 		error = [];
 	}
 	$("display").innerHTML = str;
-	console.log(Global);
 }
 
 /*合并一下存在if_else的情况*/

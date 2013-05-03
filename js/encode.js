@@ -73,7 +73,7 @@ function encode() {
 	CONST_POS_UPPER = 65;
 	
 	//对文法进行转码
-	var band = ['(',')','-','+','*','/','=','>','<','\'','\"','[',']'];
+	var band = ['(',')','-','+','*','/','=','>','<','\'','\"','[',']','{','}',','];
     for(var i=0; i<code.length; i++){
 		var t = code[i].replace(/\w*.*\s*->\s*/g,'').split(' ');
 		for(var item in t){

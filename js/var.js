@@ -25,7 +25,7 @@ var Global = [];
 function hasType(str) {
 
 	//只声明不赋值语句
-	var eql = /^(int|double|string)\s+[a-zA-Z][a-zA-Z0-9_]*$/;
+	var eql = /^(int|double|string)\s+[a-zA-Z][a-zA-Z0-9_]*(\[\s*\])?$/;
 
 	//整型
 	var int_reg = /^(int)\s+[a-zA-Z][a-zA-Z0-9_]*\s*=\s*-?\d+$/;
@@ -39,7 +39,7 @@ function hasType(str) {
 	//字符串赋值
 	var eql_str = /^[a-zA-Z][a-zA-Z0-9_]*\s*=\s*['"][a-zA-Z0-9_]*['"]$/;
 	//变量直接赋值
-	var eql_var = /^[a-zA-Z][a-zA-Z0-9_]*\s*=\s*[a-zA-Z0-9_]$/;
+	var eql_var = /^[a-zA-Z][a-zA-Z0-9_]*\s*=\s*[a-zA-Z][a-zA-Z0-9_]*$/;
 
 	if(eql.test(str))
 		return 1;
@@ -55,17 +55,25 @@ function hasType(str) {
 		return 6;
 	if(eql_var.test(str))
 		return 7;
-	return false;
+	// 对于一般的算数表达式 a = (2*3) / (4-3)
+	return 8;
 }
 
 function storeVar(str) {
 	//var str = $('input').value;
+	//console.log( str );
 	//第一步检查是否为赋值或则声明语句
-	var type = hasType(str);
+	var type = hasType(str),
+		isArr = false;
 	if(type){
 		//通用的变量名提取
 		var name = str.replace(/(int|double|string)\s*/g,'')
-						.replace(/(\s*=\s*.+)?/g,'');
+						.replace(/(\[\s*\])?(\s*=\s*.+)?/g,'');
+
+		// 判断是否是数组声明
+		if( str.indexOf('[') != -1 && str.indexOf(']') != -1 ) {
+			isArr = true;
+		}
 		//初始化这个变量
 		//初始化声明处理
 		if(type < 5){
@@ -109,11 +117,11 @@ function storeVar(str) {
 				break;
 			case 5:
 				Global[name]['val'] = parseFloat(str.replace(/.+=\s*/g,''));
-				//float
+				//double
 				if(str.replace(/.+=\s*/g,'').indexOf('.') != -1)
-					Global['type'] = 'float';
+					Global[name]['type'] = 'double';
 				else
-					Global['type'] = 'int';
+					Global[name]['type'] = 'int';
 				break;
 			case 6:
 				Global[name]['val'] = str.replace(/.+=\s*['"]/g,'')
@@ -123,6 +131,12 @@ function storeVar(str) {
 			case 7:
 				Global[name]['val'] = Global[name_2].val;
 				Global[name]['type'] = Global[name_2].type;
+				four_pro.push({
+					op: '=',
+					arg1: name_2,
+					result: name,
+					index: four_pro.length + 1
+				});
 				break;
 			default:
 				return false;

@@ -481,25 +481,69 @@ function analysis_alo(chg_str) {
 		if(status.indexOf('S') != -1){
 			S_stack.push(parseInt(status.replace(/S/g,'')));
 			X_stack.push(ip);
+
+			/*
+			if ( ip === 'f' ) {
+				code_type = 'if';
+			} else if ( ip === 'e' ) {
+				code_type = 'if_else';
+			} else if ( ip === 'w' ) {
+				code_type = 'while';
+			}
+			*/
+
 			ip = w_str.shift();
 			str_dis += ',移进状态'+status.replace(/S/g,'')+'和输入符号'+ip+'</td>';
 		/*归约,并判断下一步状态*/
 		}else if(status.indexOf('r') != -1){
+
+			var arg = [];
 			/*第k个产生式A->a*/
 			var str = pro_G[parseInt(status.replace(/r/g,''))];
 			/*从栈顶弹出2*|a|个符号*/
 			for(var j=0; j<str.slice(str.indexOf('>')+1,str.length).length; j++){
-				X_stack.pop();
+				arg.push(X_stack.pop());
+				//console.log(arg1);
+
+			    var _out = arg[ arg.length - 1 ];
+
+				// 存储好所有依次出现的变量名字以及变量的值
+				if ( _out === 'i' || _out === 's' || _out === 'd' || 
+						_out === 'v' )	{
+
+					if ( _out === 'v' ) {
+						addr_reg.push( var_value.pop() );
+					}
+
+					// 为条件表达式还原做准备
+					condition_exp.push( _out );
+				}
+
+				// 条件语句
+				if ( _out === '<' || _out === '>' ) {
+
+					// 顺序出栈condition_exp中的内容即可 如: i < 10
+				    _out += condition_exp.pop();
+
+					var exp = condition_exp.pop();
+						exp += _out; 
+				}
+
 				S_stack.pop();
 			}
+
+			arg.reverse();
+
+			translate( arg );
+
 			/*把A压入栈中*/
 			X_stack.push(str[0]);
 			str_dis += ',按第'+status.replace(/r/g,'')+'个产生式'+str+'归约</td></tr>';
 
 			//下一步的状态
 			str_dis += '<tr><td>步骤'+ (++step) + '</td>' +
-						   '<td>' +  S_stack + X_stack + '</td>' +
-						   '<td>' + ip+w_str + '</td>';
+					   '<td>' +  S_stack + X_stack + '</td>' +
+					   '<td>' + ip+w_str + '</td>';
 			/*令S'为当前栈顶状态,把goto[S',A]压入栈中*/
 			var _s = _goto[parseInt(S_stack[S_stack.length-1])][X_stack[X_stack.length-1]];
 			S_stack.push(_s);
@@ -531,8 +575,8 @@ window.onload = function() {
 	/*初始化文本框中的值*/
 	(function() {
 		//var init = 'V={S,L,R}\nT={*,i,=}\nS->L=R\nS->R\nL->*R\nL->i\nR->L\n';
-		var init = 'V={S,E,T}\nT={i,-,(,)}\nS->E\nE->T\nE->E-T\nT->i\nT->(E)\n';
-		$("input").value = init;
+		//var init = 'V={S,E,T}\nT={i,-,(,)}\nS->E\nE->T\nE->E-T\nT->i\nT->(E)\n';
+		//$("input").value = init;
 	})();
 	$("close").onclick = function() {
 		$("err").style.display = 'none';
