@@ -36,8 +36,11 @@ function analysis_lex(code) {
 						break;
 					}
 					item += ' '+code[i];
-					//记录下生成的变量
-					storeVar(code[i]);
+                    
+					// 记录下生成的变量
+                    if ( code[i].indexOf('echo') == -1 ) {
+					    storeVar(code[i]);
+                    }
 					i++;
 				}
 				str.push(trans_(item));
@@ -54,7 +57,11 @@ function analysis_lex(code) {
 						break;
 					}
 					item += ' ' + code[i];
-					storeVar(code[i]);
+
+					// 记录下生成的变量
+                    if ( code[i].indexOf('echo') == -1 ) {
+					    storeVar(code[i]);
+                    }
 					i++;
 				}
 				str.push(trans_(item));
@@ -94,26 +101,29 @@ function analysis_lex(code) {
 			}
 		}
 	}
+    
 	var_value.reverse();
 	sy_value.reverse();
-	console.log(var_value);
-	console.log(sy_value);
+
 	return str;
 }
 
 //对所有输入代码进行转码
 function trans_(str) {
+
 	//规定这样的界符:终结符是界符
-	var band = ['(',')','-','+','*','/','=','>','<','\'','[',']'];
-	var str_out = '';
-	var now = '';
+	var band = ['(',')','-','+','*','/','=','>','<','\'','[',']'],
+	    str_out = '',
+	    now = '',
+        str_arr = [];
 
 	// 首先把字符串全部存起来
+    // BUG 只能取出一个字符串, 多字符串的支持没有完善
 	if ( str.indexOf('\'') != -1 ) {
 		var _str = str.slice( str.indexOf('\'') + 1, str.length );
 		if ( _str.indexOf('\'') != -1 ) {
 			var __str = _str.slice( 0, _str.indexOf('\'') );
-			sy_value.push( __str );
+			str_arr.push( __str );
 		}
 	}
 	//字符串已匹配好
@@ -139,7 +149,9 @@ function trans_(str) {
 			if(now.length){
 				//除掉开始已经匹配好的字符串变量
 				if(str[i] == '\'' && str[i-2] == '\'') {
+
 					str_out += now;
+                    sy_value.push( str_arr.shift() );
 				} else {
 					// 变量标识符
 					if(isNaN(now)) {
@@ -153,7 +165,7 @@ function trans_(str) {
 						//	var_value[ var_value.indexOf( now ) ] = '';
 						//	var_value = var_value.join('|').split('|');
 						//} else {
-							var_value.push( now );
+						var_value.push( now );
 						//}
 					//数值常量
 					} else { 

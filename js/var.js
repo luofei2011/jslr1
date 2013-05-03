@@ -135,7 +135,7 @@ function storeVar(str) {
 					op: '=',
 					arg1: name_2,
 					result: name,
-					index: four_pro.length + 1
+					index: four_pro.length + 1,
 				});
 				break;
 			default:

@@ -58,23 +58,11 @@ function dealCode(){
 
 	//按块进行语法分析
 	for(var i in value){
-
-		var _temp = value[i];
 		str += analysis_alo(value[i]+'#');
-
-		// if
-		if ( _temp.indexOf('f') != -1 ) {
-			
-			// if-else
-			if ( _temp.indexOf('e') != -1 ) {
-			} else {
-				var _con = _temp.slice( _temp.indexOf('(') + 1, _temp.indexOf(')') );
-			}
-		// while
-		} else if ( value[i].indexOf('w') ) {
-		}
 	}
+
 	var err = '';
+
 	if(error.length){
 		for(var i in error){
 			err += '<p>'+error[i]+'</p>';

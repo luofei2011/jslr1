@@ -454,23 +454,23 @@ function action_goto() {
  *
  * */
 function analysis_alo(chg_str) {
-	//取得输出值
-    /*if($('input').value.length <= 0)
-		$('input').value = 'i-(i)-i#';
-	var w_str = $("input").value;*/
-    var w_str = chg_str;
 
-	w_str = w_str.split('');
-	var S_stack = [];	//栈顶状态
-	var X_stack = [];	//输入符号栈
+	//取得输出值
+    var w_str = chg_str;
+	    w_str = w_str.split('');
+
+	var S_stack = [],	//栈顶状态
+	    X_stack = [];	//输入符号栈
+
 	/*初始化两个栈*/
 	S_stack.push('0');
 	X_stack.push('#');
+
 	/*将输入串放入输入缓冲区中,指针ip指向第一个符号*/
-	var ip = w_str.shift();
-	/*显示信息*/
-	var str_dis = '<table>';
-	var step =0;
+	var ip = w_str.shift(),
+	    str_dis = '<table>',    //显示信息
+	    step =0;
+
 	while(1){
 		str_dis += '<tr><td>步骤'+ (++step) + 
 				  '</td><td>' + S_stack + X_stack + 
@@ -482,15 +482,25 @@ function analysis_alo(chg_str) {
 			S_stack.push(parseInt(status.replace(/S/g,'')));
 			X_stack.push(ip);
 
-			/*
-			if ( ip === 'f' ) {
-				code_type = 'if';
-			} else if ( ip === 'e' ) {
-				code_type = 'if_else';
-			} else if ( ip === 'w' ) {
-				code_type = 'while';
-			}
-			*/
+            // 记录下处于什么条件语句内
+            if ( ip === 'w' || ip === 'f' || ip === 'e' ) {
+
+                TYPE = ip;
+
+                // 如果是e(else), 则回填if应该跳转的步数
+                if ( ip === 'e' ) {
+
+                    backFill();
+                    go_step = 0;
+
+                    // 为else语句设定跳转的步数
+                    four_pro.push({
+                        op: 'goto',
+                        result: 'XXX',
+                        index: four_pro.length + 1
+                    });
+                }
+            }
 
 			ip = w_str.shift();
 			str_dis += ',移进状态'+status.replace(/S/g,'')+'和输入符号'+ip+'</td>';
@@ -503,30 +513,24 @@ function analysis_alo(chg_str) {
 			/*从栈顶弹出2*|a|个符号*/
 			for(var j=0; j<str.slice(str.indexOf('>')+1,str.length).length; j++){
 				arg.push(X_stack.pop());
-				//console.log(arg1);
 
 			    var _out = arg[ arg.length - 1 ];
 
 				// 存储好所有依次出现的变量名字以及变量的值
 				if ( _out === 'i' || _out === 's' || _out === 'd' || 
-						_out === 'v' )	{
+						_out === 'v' || _out === '>' || _out === '<' )	{
+
+					// 为条件表达式还原做准备
+                    if ( _out === '<' || _out === '>' ) {
+                        con_type = _out;
+                    } else {
+					    condition_exp.push( _out );
+                    }
 
 					if ( _out === 'v' ) {
 						addr_reg.push( var_value.pop() );
 					}
 
-					// 为条件表达式还原做准备
-					condition_exp.push( _out );
-				}
-
-				// 条件语句
-				if ( _out === '<' || _out === '>' ) {
-
-					// 顺序出栈condition_exp中的内容即可 如: i < 10
-				    _out += condition_exp.pop();
-
-					var exp = condition_exp.pop();
-						exp += _out; 
 				}
 
 				S_stack.pop();
@@ -562,6 +566,29 @@ function analysis_alo(chg_str) {
 		str_dis += '</tr>';
 	}
 	str_dis += '</table>';
+
+    // while的跳转
+    if ( TYPE === 'w' ) {
+        
+        four_pro.push({
+            op: 'goto',
+            result: begin_w,
+            index: four_pro.length + 1
+        });
+
+        go_step ++;
+    }
+
+    // 回填, 若是while语句, 回填必须发生在上一句if之后!
+    backFill();
+
+    // 清空归约的结果
+    condition_exp.length = 0;
+    addr_reg.length = 0;
+    go_step = 0;
+    TYPE = '';
+    begin_w = 0;
+
 	return str_dis;
 }
 
