@@ -540,6 +540,11 @@ function analysis_alo(chg_str) {
 
 			translate( arg );
 
+            // 每遇到一个表示符号v则出栈一次, 但得在翻译以后!
+            //if ( _out === 'v' ) {
+             //   var_value.pop();
+            //}
+
 			/*把A压入栈中*/
 			X_stack.push(str[0]);
 			str_dis += ',按第'+status.replace(/r/g,'')+'个产生式'+str+'归约</td></tr>';

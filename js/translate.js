@@ -42,11 +42,11 @@ function translate( arg ) {
 	// 翻译赋值语句
 	if ( arg.indexOf('=') != -1 && 
 			sy_value.length ) {
-		console.log( arg.join('') );
+
 		four_pro.push({
-			op: arg[ 1 ],
+			op: '=',
 			arg1: sy_value.pop(),
-			result: addr_reg.pop(),
+			arg2: addr_reg.pop(),
 			index: four_pro.length + 1,
             result: four_pro.length + 2 // 跳到下一句
 		});
@@ -59,6 +59,7 @@ function translate( arg ) {
 
 	// 翻译输出语句
 	if ( arg.indexOf('r') != -1 ) {
+
 		four_pro.push({
 			op: 'echo',
 			arg1: sy_value.pop(),
@@ -90,8 +91,8 @@ function translate( arg ) {
         // 打印四元式
         four_pro.push({
             op: exp[1],
-            arg1: sy_value.pop(),
-            arg2: sy_value.pop(),
+            arg2: ( exp[0] === 'i' ) ? sy_value.pop() : addr_reg.pop(),
+            arg1: ( exp[2] === 'i' ) ? sy_value.pop() : addr_reg.pop(),
             result: four_pro.length + 3,    // if的下下一句是真入口
             index: four_pro.length + 1
         });
@@ -115,7 +116,6 @@ function backFill() {
         
         // 回填第一项步数
         if ( four_pro[i].result === 'XXX' ) {
-            console.log( go_step );
 
             // 跳到指定位置
             four_pro[i].result = four_pro[i].index + go_step + 1;
