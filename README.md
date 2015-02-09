@@ -1,3 +1,8 @@
+在线测试地址
+====
+
+[https://cdn.rawgit.com/luofei2011/jslr1/master/index.html](https://cdn.rawgit.com/luofei2011/jslr1/master/index.html)
+
 jslr
 ====
 
